@@ -15,7 +15,8 @@ body {
     font-weight: 700;
     line-height: 18px;
     letter-spacing: -0.56px;
-    color: #FFF;
+    color: var(--dark);
+
 }
 
 .is-hidden {
