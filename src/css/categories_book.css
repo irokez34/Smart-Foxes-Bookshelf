@@ -1,0 +1,75 @@
+.categories-books-title {
+  color: var(--dark-background);
+  font-size: 32px;
+  line-height: 118.75%;
+  letter-spacing: -1.28px;
+}
+
+.categories-books-title-accent {
+  color: var(--hover-color);
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -1.28px;
+}
+
+.categories-books-genre {
+  color: #b4afaf;
+  font-weight: 400;
+  line-height: 128.571%;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  padding: 40px 0;
+}
+
+.categories-books-genre-all-books {
+  display: flex;
+  gap: 24px;
+}
+
+.categories-books-genre-book {
+  padding: 18px 0 32px 0;
+}
+
+.categories-books-genre-book-img {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+  padding-bottom: 14px;
+  object-fit: cover;
+}
+
+.categories-books-genre-book-title {
+  color: var(--dark-background);
+  font-size: 16px;
+  line-height: 112.5%;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.categories-books-genre-book-author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 116.667%;
+  letter-spacing: -0.48px;
+}
+
+.categories-books-btn {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 116.667%;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+
+  display: flex;
+  padding: 14px 28px;
+  align-items: flex-end;
+  gap: 10px;
+  border-radius: 40px;
+  border: 2px solid var(--hover-color);
+  background-color: transparent;
+}
