@@ -11,7 +11,6 @@ export async function getTopBooks() {
   const params = 'top-books';
   return await axios.get(`${BASE_URL}${params}`);
 }
-// getCategoryList().then(data => console.log(data))
 
 export async function getBooksByCategory(selectedCategory) {
   const params = 'category?category=';
