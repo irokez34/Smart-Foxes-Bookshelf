@@ -1,8 +1,6 @@
 :root {
     --bg-header-night: #202024;
     --bg-header-day: #FFF;
-    --bg-body-day: #F6F6F6;
-    --bg-body-night: #202024;
     --dark-text: #111;
     --white: #FFFFFF;
     --active-color: #EAC645;
@@ -12,7 +10,7 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background: var(-bg-body-day);
+    background: var(--body-bg);
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -36,7 +34,6 @@ body {
 }
 
 .theme-light {
-    --font-family: "DM Sans";
     --body-bg: #f6f6f6;
 
     /*header*/
@@ -130,7 +127,6 @@ body {
 
 
 .theme-dark {
-    --font-family: "DM Sans";
     --body-bg: #202024;
 
 
