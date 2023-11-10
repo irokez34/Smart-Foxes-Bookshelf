@@ -15,12 +15,86 @@
   <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/modulepreload-polyfill-3cfb730f.js">
   <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/vendor-1c5e86dd.js">
-  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/index-a46aa09b.css">
+  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/index-bc3d7f9b.css">
 </head>
 
 <body class="theme-light">
-  <header class="header container">
+   
+<header class="header">
+    <div class="container header-container">
+    <nav class="header-navigation">
+    <a class="logo" href="index.html">
+        <svg class="logo-icon" width="24" height="24">
+            <use href="../img/sprite.svg#icon-logo"></use>
+        </svg>
+        <svg class="logo-text" width="77" height="13">
+            <use href="../img/sprite.svg#icon-bookshelf"></use>
+        </svg>
+        </a>
+            <ul class="header-nav-list">
+                <li class="nav-item">
+                    <a class="header-link header-link-home" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="basket basket-on header-link " href="#">
+                        Shopping list
+                        <span>
+                            <svg class="icon-basket" width="20" height="20">
+                            <use href="../img/sprite.svg#icon-shop"></use>
+                        </svg>
+                    </span>
+                      </a>
+                </li>
+            </ul>
+    </nav>
+
+    <div class="header-list">
+        <div class="header-swich">
+            <label id="switch" class="switch">
+                <input type="checkbox"  id="theme-switch"/>
+                <span class="slider round"></span>
+              </label>      
+        </div>
+        <div class="header-button">
+            <button class="acount-log-in" data-modal-open>Sign up
+              <svg class="icon-log" width="20" height="20">
+                    <use href="../img/sprite.svg#icon-arrow-narrow-right"></use>
+                </svg>  
+            </button>
+        </div>
+
+
+        <button class="mobile-menu-open-btn js-open-menu"  data-menu-open>
+            <svg class="mobile-menu-open-icon" width="28" height="28">
+               <use href="../img/sprite.svg#icon-align-left"></use>
+            </svg>
+      </div>        
+           <!-- </button>
+            <button class="mobile-menu-close-btn js-close-menu" data-menu-close>
+            <svg class="mobile-menu-close-icon" width="28" height="28">
+                <use href="../img/sprite.svg#icon-close"></use>
+            </svg>
+        </button> 
+        </div> -->
+           
+        <!-- <div class="mobile-menu js-menu-container" data-menu>
+            <div class="container mobile-container">
+        
+                <div class="mobile-header-button">
+                    <button class="acount-log-in" data-modal-open>Sign up
+                      <svg class="icon-log" width="20" height="20">
+                            <use href="../img/sprite.svg#icon-arrow-narrow-right"></use>
+                        </svg>  
+                    </button>
+                </div>
+        
+            </div>
+             -->
+        
+       
+    </div>
 </header>
+   
   <main>
     <section class="container">
       <div></div>
