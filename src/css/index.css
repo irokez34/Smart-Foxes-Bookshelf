@@ -1,0 +1,13 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./reset.css');
+@import url('./components.css');
+@import url('./header.css');
+@import url('./all_categories.css');
+@import url('./suport.css');
+@import url('./categories_book.css');
+@import url('./pop_up.css');
