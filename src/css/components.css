@@ -1,7 +1,9 @@
 :root {
-    --night: #202024;
-    --day: #FFF;
-    --dark: #111;
+    --bg-header-night: #202024;
+    --bg-header-day: #FFF;
+    --bg-body-day: #F6F6F6;
+    --bg-body-night: #202024;
+    --dark-text: #111;
     --white: #FFFFFF;
     --active-color: #EAC645;
     --hover-color: #4F2EE8;
@@ -10,12 +12,13 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
+    background: var(-bg-body-day);
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: -0.56px;
-    color: var(--dark);
+    color: var(--dark-text);
 
 }
 
