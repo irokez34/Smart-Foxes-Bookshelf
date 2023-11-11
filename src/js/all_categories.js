@@ -1,4 +1,4 @@
-import { getCategoryList } from './js/BOOKS_API.js';
+import { getCategoryList } from '../js/BOOKS_API.js';
 
 const elem = {
   AllCategoriesContainer: document.querySelector('.all-categories-container'),
