@@ -32,17 +32,17 @@ const firebaseConfig = {
     document.getElementById('login_form').style.display = 'block';
   }
   // Функція для реєстрації
-  function register() {
+function register() {
     let name = document.getElementById('registration_name').value;
     let email = document.getElementById('registration_email').value;
     let password = document.getElementById('registration_password').value;
-    let confirmPassword = document.getElementById('registration_confirm_password').value;
-  // Валідація
-    if (validate_field(name) == false || validate_email(email) == false || validate_password(password) == false || password !== confirmPassword) {
+
+    // Валідація
+    if (validate_field(name) == false || validate_email(email) == false || validate_password(password) == false) {
         alert('Registration failed. Please check your inputs.');
         return;
     }
-  // Запис нового користувача
+    // Запис нового користувача
     auth.createUserWithEmailAndPassword(email, password)
         .then(function () {
             let user = auth.currentUser;
@@ -60,7 +60,8 @@ const firebaseConfig = {
             let error_message = error.message;
             alert(error_message);
         });
-  }
+}
+
   // Функція для логіну
   function login() {
     let email = document.getElementById('login_email').value;
