@@ -1,8 +1,10 @@
-import { getCategoryList } from './js/BOOKS_API';
+import { getCategoryList } from '../js/BOOKS_API';
+import moduleName from 'module';
 
 const elem = {
-  AllCategoriesContainer: document.querySelector('.all-categories-container'),
-  AllCategoriesList: document.querySelector('.js-categories-list'),
+  allCategoriesContainer: document.querySelector('.all-categories-container'),
+  allCategoriesList: document.querySelector('.js-categories-list'),
+  allCategoriesListItem: document.querySelector('.js-categories-list-item')
 };
 
 // Функція створення розмітки
@@ -11,7 +13,7 @@ function createMarkupCategoryList(arr) {
   return arr
     .map(
       ({ list_name }) =>
-        `<li class="categories-list-item"><a href="#">${list_name}</a></li>`
+        `<li class="categories-list-item js-categories-list-item link"><a href="">${list_name}</a></li>`
     )
     .join('');
 }
@@ -22,7 +24,7 @@ allCategoriesStatic();
 
 getCategoryList()
   .then(object => {
-    elem.AllCategoriesList.insertAdjacentHTML(
+    elem.allCategoriesList.insertAdjacentHTML(
       'beforeend',
       createMarkupCategoryList(object.data)
     );
@@ -35,5 +37,15 @@ function allCategoriesStatic() {
   const staticName = document.createElement('li');
   staticName.classList.add('categories-list-item', 'category-active');
   staticName.textContent = 'All Categories';
-  elem.AllCategoriesList.prepend(staticName);
+  elem.allCategoriesList.prepend(staticName);
 }
+
+// Функція кліку по категорії
+
+elem.allCategoriesContainer.addEventListener('click', onCategoryClick); 
+
+function onCategoryClick (){
+  if(!evt.target.classList.contains('.js-categories-list-item'))
+  return;
+}
+
