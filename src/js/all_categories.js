@@ -20,7 +20,7 @@ function createMarkupCategoryList(arr) {
 
 // Рендеринг
 
-allCategoriesStatic();
+// allCategoriesStatic();
 
 getCategoryList()
   .then(object => {
@@ -33,18 +33,23 @@ getCategoryList()
 
 // 'All Categories' завжди перше в списку
 
-function allCategoriesStatic() {
-  const staticName = document.createElement('li');
-  staticName.classList.add('categories-list-item', 'category-active');
-  staticName.textContent = 'All Categories';
-  elem.allCategoriesList.prepend(staticName);
-}
+// function allCategoriesStatic() {
+//   const staticName = document.createElement('li');
+//   staticName.classList.add(
+//     'js-all_categories',
+//     'categories-list-item',
+//     'category-active'
+//     );
+//   staticName.textContent = 'All Categories';
+//   elem.allCategoriesList.prepend(staticName);
+// }
 
 // Функція кліку по категорії
 
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick); 
 
-function onCategoryClick (){
+function onCategoryClick (evt){
+  console.log(evt.target);
   if(!evt.target.classList.contains('.js-categories-list-item'))
   return;
 }
