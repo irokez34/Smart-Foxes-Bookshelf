@@ -23,8 +23,17 @@ allCategoriesStatic();
 getCategoryList()
   .then(object => {
     elem.AllCategoriesList.insertAdjacentHTML(
-    'beforeend',
-    createMarkupCategoryList(object.data)
-  )}
-)
-.catch(error => console.log(error));
+      'beforeend',
+      createMarkupCategoryList(object.data)
+    );
+  })
+  .catch(error => console.log(error));
+
+// 'All Categories' завжди перше в списку
+
+function allCategoriesStatic() {
+  const staticName = document.createElement('li');
+  staticName.classList.add('categories-list-item', 'category-active');
+  staticName.textContent = 'All Categories';
+  elem.AllCategoriesList.prepend(staticName);
+}
