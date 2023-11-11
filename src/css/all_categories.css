@@ -128,7 +128,7 @@
   letter-spacing: -0.36px;
 }
 .categories-list-item.category-active {
-  color: #4F2EE8;
+  color: #4F2EE8 ;
   text-transform: uppercase;
   font-weight: 700;
 }
