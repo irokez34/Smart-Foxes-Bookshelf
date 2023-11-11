@@ -131,7 +131,8 @@
   letter-spacing: -0.48px;
 }
 
-.categories-books-btn {
+.categories-books-btn,
+.categories-books-back-btn {
   color: var(--btn-see-you-text);
   font-size: 12px;
   font-style: italic;
@@ -150,6 +151,7 @@
   background-color: var(--btn-see-you-bg);
   margin-bottom: 40px;
 }
+
 .categories-books-all {
   display: flex;
   flex-wrap: wrap;
