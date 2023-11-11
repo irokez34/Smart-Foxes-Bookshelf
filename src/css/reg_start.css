@@ -6,3 +6,55 @@
 */
 @import url('./reset.css');
 @import url('./components.css');
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: var(--day);
+  border-radius: 40px;
+  border: 2px solid var(--dark);
+  max-width: 579px;
+  max-height: 516px;
+  padding: 40px;
+}
+.form-input {
+  height: 64px;
+  width: 500px;
+  margin-bottom: 28px;
+  border-radius: 40px;
+  padding-left: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.form-button {
+  width: 100%;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 40px;
+  color: #f3f3f3;
+  background-color: var(--dark);
+  border-style: none;
+}
