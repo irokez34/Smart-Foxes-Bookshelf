@@ -126,8 +126,19 @@
   font-weight: 400;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
+
 }
-.categories-list-item.category-active {
+.categories-list-item:hover,
+.categories-list-item:focus{
+  cursor: pointer;
+}
+/* .categories-list-item.category-active {
+  color: var(--primery-text-hover-focus);
+  text-transform: uppercase;
+  font-weight: 700;
+} */
+
+.category-active {
   color: var(--primery-text-hover-focus);
   text-transform: uppercase;
   font-weight: 700;
