@@ -15,7 +15,7 @@ function createMarkupCategoryList(arr) {
   return arr
     .map(
       ({ list_name }) =>
-        `<li class="categories-list-item js-categories-list-item " data-category='${list_name}'><a href="">${list_name}</a></li>`
+        `<li class="categories-list-item js-categories-list-item " data-category='${list_name}'>${list_name}</li>`
     )
     .join('');
 }
@@ -73,69 +73,57 @@ getCategoryList()
 //   }
 // }
 
-// СПРОБА 3
+// СПРОБА 100500
 
-// elem.allCategoriesList.addEventListener('click', onCategoryClick);
-elem.allCategoriesList.addEventListener('click', clickAccent);
+elem.allCategoriesList.addEventListener('click', onCategoryClick);
+elem.allCategoriesContainer.addEventListener('click', clickAccent);
 
-// let allCategoriesListItem = null;
+function clickAccent(evt) {
+  const firstListItem = document.querySelector(
+    '.js-categories-list li:first-of-type'
+  );
+  const isFirstElement = firstListItem === evt.currentTarget;
+  if (isFirstElement) {
+    !evt.preventDefault();
+  }
 
-// function clickAccent(evt) {
-//   evt.preventDefault();
-//   if (allCategoriesListItem) {
-//     elem.allCategoriesListItem.classList.remove('category-active');
-//   }
+  const arrClass = [...elem.allCategoriesList.children];
 
-//   evt.target.classList.add('category-active');
-//   elem.allCategoriesListItem = evt.target;
-// }
+  arrClass.map(item => item.classList.remove('category-active'));
 
+  evt.target.classList.add('category-active');
+}
 
-// function clickAccent(evt) {
-//   evt.preventDefault();
-//   console.log('Click event fired!');
+async function onCategoryClick(evt) {
+  clickAccent(evt);
+
+  const isFirstElement = evt.target === elem.allCategoriesList.firstElementChild;
  
+if (!evt.target.classList.contains('js-categories-list-item')) {
+  return;
+}
 
-//   const arrClass = [...elem.allCategoriesList.children];
-//   // const arrClass = Array.from(elem.allCategoriesList.children);
+const categoryLink = evt.target.dataset.category;
 
-//   arrClass.map(item => item.classList.remove('category-active'));
-//   console.log('After removal:', arrClass);
-
-//   evt.target.classList.add('category-active');
-// }
-
-// async function onCategoryClick(evt) {
-//   evt.preventDefault();
-
-//   if (!evt.target.classList.contains('js-categories-list-item')) {
-//     return;
-//   }
-// const arrClass = [...elem.allCategoriesList.children];
-// arrClass.map(item => item.classList.remove('category-active'));
-// evt.target.classList.add('category-active');
-
-// const categoryLink = evt.target.dataset.category;
-
-// const genreByWord = categoryLink.split(' ');
-// const lastWord = genreByWord.splice(-1, 1);
+const genreByWord = categoryLink.split(' ');
+const lastWord = genreByWord.splice(-1, 1);
 
 // elem.categoriesBooksTitle.innerHTML = `${genreByWord.join(
 //   ' '
 // )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 
-// categoriesBook.innerHTML = `${genreByWord.join(
-//   ' '
-// )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
-//   elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
+elem.categoriesBook.innerHTML = `${genreByWord.join(
+  ' '
+)} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
 
-//   try {
-//     const booksByListName = await getBooksByCategory(categoryLink);
+try {
+  const booksByListName = await getBooksByCategory(target.attributes.value.nodeValue);
 
-//     const allBooksByGenre = createCardByGenre(booksByListName.data);
+  const allBooksByGenre = createCardByGenre(booksByListName.data);
 
-//     addCardByGenre(allBooksByGenre);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+  addCardByGenre(allBooksByGenre);
+} catch (err) {
+  console.log(err);
+}
+}
