@@ -74,27 +74,6 @@ function clickAccent(evt) {
   evt.target.classList.add('category-active');
 }
 // Рендер по кліку
-async function onCategoryClick(evt) {
-  clickAccent(evt);
-
-  const isFirstElement = evt.target === elem.allCategoriesList.firstElementChild;
- 
-if (!evt.target.classList.contains('js-categories-list-item')) {
-  return;
-}
-
-const categoryLink = evt.target.dataset.category;
-const genreByWord = categoryLink.split(' ');
-const lastWord = genreByWord.splice(-1, 1);
-
-// elem.categoriesBooksTitle.innerHTML = `${genreByWord.join(
-//   ' '
-// )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
-
-elem.categoriesBook.innerHTML = `${genreByWord.join(
-  ' '
-)} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
-elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
 
 try {
   const booksByListName = await getBooksByCategory(target.attributes.value.nodeValue);
@@ -103,5 +82,5 @@ try {
 } catch (err) {
   console.log(err);
 }
-}
+
 
