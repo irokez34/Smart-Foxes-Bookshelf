@@ -78,18 +78,32 @@ getCategoryList()
 // elem.allCategoriesList.addEventListener('click', onCategoryClick);
 elem.allCategoriesList.addEventListener('click', clickAccent);
 
-function clickAccent(evt) {
-  evt.preventDefault();
-  console.log('Click event fired!');
+// let allCategoriesListItem = null;
 
-  // const arrClass = [...elem.allCategoriesList.children];
-  const arrClass = Array.from(elem.allCategoriesList.children);
+// function clickAccent(evt) {
+//   evt.preventDefault();
+//   if (allCategoriesListItem) {
+//     elem.allCategoriesListItem.classList.remove('category-active');
+//   }
 
-  arrClass.map(item => item.classList.remove('category-active'));
-  console.log('After removal:', arrClass);
+//   evt.target.classList.add('category-active');
+//   elem.allCategoriesListItem = evt.target;
+// }
 
-  evt.target.classList.add('category-active');
-}
+
+// function clickAccent(evt) {
+//   evt.preventDefault();
+//   console.log('Click event fired!');
+ 
+
+//   const arrClass = [...elem.allCategoriesList.children];
+//   // const arrClass = Array.from(elem.allCategoriesList.children);
+
+//   arrClass.map(item => item.classList.remove('category-active'));
+//   console.log('After removal:', arrClass);
+
+//   evt.target.classList.add('category-active');
+// }
 
 // async function onCategoryClick(evt) {
 //   evt.preventDefault();
