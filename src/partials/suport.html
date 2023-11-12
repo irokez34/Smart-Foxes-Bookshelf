@@ -1,48 +1,58 @@
-<div class="suport">
-    <div class="block-title-support-ukraine">
-        <h3 class="title-support-ukraine">Support Ukraine</h3>
-        <div class="title-icon-support-ukraine">
-            <svg class="icon-support-ukraine" width="20" height="32" viewbox="0 0 20 32" fill="#FFFFFF">
-                <use href="../img/sprite.svg#icon-gerb"></use>
-            </svg>
+<div class="card">
+    <div class="wrap-title">
+        <div class="title">Support Ukraine</div>
+        <img class="main-icon" src="/img/main-icon.png" alt="иконка" class="icon">
+    </div>
+    <div class="list">
+        <div class="list-item">
+            <span>01</span>
+            <img class="number-icon" src="/img/icon1.png" alt="Save the Children" class="icon">
         </div>
+
+        <div class="list-item">
+            <span>02</span>
+            <img class="number-icon" src="/img/icon2.png" alt="Project HOPE" class="icon">
+        </div>
+        <div class="list-item">
+            <span>03</span>
+            <img class="number-icon" src="/img/icon3.png" alt="UNITED24" class="icon">
+        </div>
+        <div class="list-item">
+            <span>04</span>
+            <img class="number-icon" src="/img/icon4.png" alt="International Medical Corps" class="icon">
+        </div>
+        <div class="list-item">
+            <span>05</span>
+            <img class="number-icon" src="/img/icon5.png" alt="Medicins Sans Frontieres" class="icon">
+        </div>
+        <div class="list-item">
+            <span>06</span>
+            <img class="number-icon" src="/img/icon6.png" alt="RAZOM" class="icon">
+        </div>
+
+
+
+        <!-- Дополнительные пункты, изначально скрыты -->
+        <div class="additional-items" id="additionalItems">
+            <div class="list-item additional-item">
+                <span>07</span>
+                <img class="number-icon" src="/img/icon7.png" alt="Action against hunger" class="icon">
+            </div>
+            <div class="list-item additional-item">
+                <span>08</span>
+                <img class="number-icon" src="/img/icon8.png" alt="World vision" class="icon">
+            </div>
+            <div class="list-item additional-item">
+                <span>09</span>
+                <img class="number-icon" src="/img/icon9.png" alt="Serhiy Prytula Charity Foundation" class="icon">
+            </div>
+        </div>
+        <!-- Стрелочка для открытия/закрытия дополнительных пунктов -->
+        <div class="expand-btn" onclick="toggleExpand()"> <img class="slider-btn-support"
+                src="../img/slider--btn-support.png" alt=""></div>
+
+
     </div>
-    <div class="suport__box-name">
-        <ul>
-            <li class="test">01 <a href=""><img width="82px" height="32px" src="../img/save_the_children.png"
-                        alt="save the children" /></a></li>
-        </ul>
-        <ul>
-            <li class="test">02 <a href=""><img width="82px" height="32px" src="../img/hope.png" alt="hope" /></a></li>
-        </ul>
-        <ul>
-            <li class="test">03 <a href=""><img width="82px" height="32px" src="../img/international_medical.png"
-                        alt="" /></a></li>
-        </ul>
-        <ul>
-            <li class="test">04 <a href=""><img width="82px" height="32px" src="../img/razom.png" alt="" /></a></li>
-        </ul>
-        <ul>
-            <li class="test">05 <a href=""><img width="82px" height="32px" src="../img/action_against_hunger.png"
-                        alt="Напишеш тут опис" /></a></li>
-        </ul>
-        <ul>
-            <li class="test">06 <a href=""><img width="82px" height="32px" src="../img/sergiy_prytula.png" alt="Напишеш тут опис" /></a>
-            </li>
-        </ul>
-        <ul>
-            <li class="test is-hidden">07 <a href=""><img width="82px" height="32px" src="../img/medical.png" alt="Напишеш тут опис" /></a></li>
-        </ul>
-        <ul>
-            <li class="test is-hidden">08 <a href=""><img width="82px" height="32px" src="../img/world_vision.png"
-                        alt="Напишеш тут опис" /></a></li>
-        </ul>
-        <ul>
-            <li class="test is-hidden">09 <a href=""><img width="82px" height="32px" src="../img/united_24.png"
-                        alt="Напишеш тут опис" /></a></li>
-        </ul>
-    </div>
-    <button class="suport__button"><svg  width="32" height="32" viewBox="0 0 32 32" fill="dark">
-        <use href="../img/sprite.svg#icon-down"></use>
-      </svg></button>
 </div>
+
+<script src="../js/suport.js"></script>
