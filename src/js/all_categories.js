@@ -34,8 +34,6 @@ getCategoryList()
 
 // Функція кліку по категорії
 
-// СПРОБА 1
-
 
 async function onCategoryClick(evt) {
   evt.preventDefault();
@@ -74,13 +72,5 @@ function clickAccent(evt) {
   evt.target.classList.add('category-active');
 }
 // Рендер по кліку
-
-try {
-  const booksByListName = await getBooksByCategory(target.attributes.value.nodeValue);
-  const allBooksByGenre = createCardByGenre(booksByListName.data);
-  addCardByGenre(allBooksByGenre);
-} catch (err) {
-  console.log(err);
-}
 
 
