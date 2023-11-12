@@ -1,14 +1,4 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./modern-normalize.css');
-@import url('./components.css');
-@import url('./header.css');
-@import url('./shooping_list.css');
+
 
 .shopping-title {
   color: #111;

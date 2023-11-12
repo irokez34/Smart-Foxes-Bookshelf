@@ -5,3 +5,5 @@ import "./js/burger_menu.js";
 import "./js/all_categories.js";
 import "./js/suport.js";
 import "./js/categories_book.js";
+import "./js/pop_up.js";
+import "./js/back_to_top.js";
