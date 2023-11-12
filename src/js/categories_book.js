@@ -68,6 +68,7 @@ function createCard(books = []) {
         <div class="categories-books-genre-book-img-thumb">
           <img class="categories-books-genre-book-img"
             src="${book_image}" alt="Title - '${title}'">
+          <div class="categories-books-genre-book-hover">quick view </div>
         </div>
         <h2 class="categories-books-genre-book-title">${title}</h2>
         <h3 class="categories-books-genre-book-author">${author}</h3>
@@ -116,6 +117,7 @@ function createCardByGenre(books = []) {
           <div class="categories-books-genre-book-img-thumb">
             <img class="categories-books-genre-book-img"
               src="${book_image}" alt="Title - '${title}'">
+              <div class="categories-books-genre-book-hover">quick view </div>
           </div>
           <h2 class="categories-books-genre-book-title">${title}</h2>
           <h3 class="categories-books-genre-book-author">${author}</h3>
