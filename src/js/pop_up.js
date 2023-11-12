@@ -32,7 +32,7 @@ function createModal(bookId) {
     closeModalButton.classList.add('mdl-btn-icon-x');
     closeModalButton.innerHTML = `
         <svg class="mdl-icon-x" width="24" height="24">
-        <use href="./img/sprite.svg#icon-close"></use>
+        <use href="img/sprite.svg#icon-close"></use>
     </svg>
     `;
 
@@ -103,7 +103,7 @@ function createModal(bookId) {
             modalLinkElementAmazon.href = modalAmazonLink.url;
             modalLinkElementAmazon.target = '_blank';
             modalLinkElementAmazon.innerHTML = `
-        <img class="mdl-logo-amazon" src="../img/amazon.png" alt="logo amazon" width="62" height="19">
+        <img class="mdl-logo-amazon" src="img/amazon.png" alt="logo amazon" width="62" height="19">
     `;
 
 
@@ -120,7 +120,7 @@ function createModal(bookId) {
             purchaseLinkElement.href = modalOtherLink.url;
             purchaseLinkElement.target = '_blank';
             purchaseLinkElement.innerHTML = `
-        <img class="mdl-logo-book" src="./img/books.png" alt="logo book" width="33" height="32">
+        <img class="mdl-logo-book" src="img/books.png" alt="logo book" width="33" height="32">
     `;
             modalLinkListItem.appendChild(purchaseLinkElement);
         }
