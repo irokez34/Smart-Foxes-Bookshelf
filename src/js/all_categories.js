@@ -1,5 +1,5 @@
-import { getCategoryList, getBooksByCategory } from './js/BOOKS_API';
-import { createCardByGenre, addCardByGenre } from './js/categories_book';
+import { getCategoryList, getBooksByCategory } from '../js/BOOKS_API';
+import { createCardByGenre, addCardByGenre } from '../js/categories_book';
 
 const elem = {
   allCategoriesContainer: document.querySelector('.all-categories-container'),
@@ -15,7 +15,7 @@ function createMarkupCategoryList(arr) {
   return arr
     .map(
       ({ list_name }) =>
-        `<li class="categories-list-item js-categories-list-item" data-category='${list_name}'><a href="">${list_name}</a></li>`
+        `<li class="categories-list-item js-categories-list-item " data-category='${list_name}'><a href="">${list_name}</a></li>`
     )
     .join('');
 }
@@ -32,7 +32,6 @@ getCategoryList()
   .catch(error => console.log(error));
 
 // Функція кліку по категорії
-
 
 // СПРОБА 1
 
@@ -52,7 +51,6 @@ getCategoryList()
 //     getBooksByCategory(categoryName);
 //   }
 // }
-
 
 // СПРОБА 2
 
@@ -75,36 +73,46 @@ getCategoryList()
 //   }
 // }
 
-
 // СПРОБА 3
 
 // elem.allCategoriesList.addEventListener('click', onCategoryClick);
+elem.allCategoriesList.addEventListener('click', clickAccent);
+
+function clickAccent(evt) {
+  evt.preventDefault();
+  console.log('Click event fired!');
+
+  // const arrClass = [...elem.allCategoriesList.children];
+  const arrClass = Array.from(elem.allCategoriesList.children);
+
+  arrClass.map(item => item.classList.remove('category-active'));
+  console.log('After removal:', arrClass);
+
+  evt.target.classList.add('category-active');
+}
 
 // async function onCategoryClick(evt) {
-
 //   evt.preventDefault();
-  
+
 //   if (!evt.target.classList.contains('js-categories-list-item')) {
 //     return;
 //   }
-//   const arrClass = [...elem.allCategoriesList.children];
-//   arrClass.map(item => item.classList.remove('category-active'));
-//   evt.target.classList.add('category-active');
+// const arrClass = [...elem.allCategoriesList.children];
+// arrClass.map(item => item.classList.remove('category-active'));
+// evt.target.classList.add('category-active');
 
-//   const categoryLink = evt.target.dataset.category;
+// const categoryLink = evt.target.dataset.category;
 
-//   const genreByWord = categoryLink.split(' ');
-//   const lastWord = genreByWord.splice(-1, 1);
-  
-//   elem.categoriesBooksTitle.innerHTML = `${genreByWord.join(
-//     ' '
-//     )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+// const genreByWord = categoryLink.split(' ');
+// const lastWord = genreByWord.splice(-1, 1);
 
+// elem.categoriesBooksTitle.innerHTML = `${genreByWord.join(
+//   ' '
+// )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 
-
-//   // categoriesBook.innerHTML = `${genreByWord.join(
-//   //   ' '
-//   // )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+// categoriesBook.innerHTML = `${genreByWord.join(
+//   ' '
+// )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 //   elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
 
 //   try {
