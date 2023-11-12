@@ -1,5 +1,3 @@
-import debounce from 'lodash.debounce';
-
 const container = document.querySelector('.suport');
 const loadMoreBtn = document.querySelector('.suport__button');
 //let limit = 0;
