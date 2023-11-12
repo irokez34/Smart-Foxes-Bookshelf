@@ -1,16 +1,12 @@
 import { getCategoryList, getBooksByCategory } from '../js/BOOKS_API';
-import {
-  createCardByGenre,
-  addCardByGenre,
-} from '../js/categories_book';
-
+import { createCardByGenre, addCardByGenre } from '../js/categories_book';
 
 const elem = {
   allCategoriesContainer: document.querySelector('.all-categories-container'),
-  allCategoriesList: document.querySelector('.js-categories-list'),
-  allCategoriesListItem: document.querySelector('.js-categories-list-item'),
+  allCategoriesList: document.querySelector('.categories-list'),
+  allCategoriesListItem: document.querySelector('.categories-list-item'),
   categoriesBook: document.querySelector('.categories-books-all'),
-  categoriesBooksTitle: document.querySelector('.categories-books-title')
+  categoriesBooksTitle: document.querySelector('.categories-books-title'),
 };
 
 // Функція створення розмітки
@@ -37,7 +33,6 @@ getCategoryList()
 
 // Функція кліку по категорії
 
-
 // function onCategoryClick(evt) {
 //   if (!evt.target.classList.contains('.js-categories-list-item')) {
 //     return;
@@ -61,7 +56,7 @@ getCategoryList()
 //     return;
 //   }
 //   const categoryLink = evt.target.dataset.category;
-//   elem.categoriesBook.innerHTML = categoryLink; 
+//   elem.categoriesBook.innerHTML = categoryLink;
 //   try {
 //     const booksByListName = await getBooksByCategory(categoryLink);
 
@@ -72,3 +67,32 @@ getCategoryList()
 //     console.log(err);
 //   }
 // }
+elem.allCategoriesList.addEventListener('click', onCategoryClick);
+
+async function onCategoryClick(evt) {
+  if (!evt.target.classList.contains('js-categories-list-item')) {
+    return;
+  }
+  const arrClass = [...elem.allCategoriesList.children];
+  arrClass.map(item => item.classList.remove('category-active'));
+  evt.target.classList.add('category-active');
+
+  const categoryLink = evt.target.dataset.category;
+
+  const genreByWord = categoryLink.split(' ');
+  const lastWord = genreByWord.splice(-1, 1);
+  categoriesBook.innerHTML = `${genreByWord.join(
+    ' '
+  )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+  categoriesBooksTitle.insertAdjacentHTML('afterend');
+
+  try {
+    const booksByListName = await getBooksByCategory(categoryLink);
+
+    const allBooksByGenre = createCardByGenre(booksByListName.data);
+
+    addCardByGenre(allBooksByGenre);
+  } catch (err) {
+    console.log(err);
+  }
+}

@@ -1,7 +1,39 @@
 <div class="all-categories-container">
   <ul class="categories-list js-categories-list">
-    <li class="categories-list-item  js-all-categoties">
+    <li class="categories-list-item category-active js-all-categoties">
       <a href="./index.html">All categories</a>
     </li>
   </ul>
 </div>
+<!-- elem.allCategoriesList.addEventListener('click', onCategoryClick);
+
+async function onCategoryClick(evt) {
+  evt.preventDefault();
+  if (!evt.target.classList.contains('js-categories-list-item')) {
+    return;
+  }
+
+  const arrClass = [...elem.allCategoriesList.children];
+  arrClass.map(item => item.classList.remove('category-active'));
+  evt.target.classList.add('category-active');
+
+  console.log(arrClass);
+  const categoryLink = evt.target.dataset.category;
+
+  const genreByWord = categoryLink.split(' ');
+  const lastWord = genreByWord.splice(-1, 1);
+  categoriesBook.innerHTML = `${genreByWord.join(
+    ' '
+  )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+  elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
+
+  try {
+    const booksByListName = await getBooksByCategory(categoryLink);
+
+    const allBooksByGenre = createCardByGenre(booksByListName.data);
+
+    addCardByGenre(allBooksByGenre);
+  } catch (err) {
+    console.log(err);
+  }
+} -->
