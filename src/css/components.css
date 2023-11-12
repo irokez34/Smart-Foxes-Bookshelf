@@ -85,7 +85,8 @@ body {
   --bg-modal-form: #fff;
   --border-modal-form: #111;
   --info-book: #111;
-  --filter: grayscale(100%);
+  --filter-amazon: grayscale(100%);
+  --filter-book: grayscale(100%);
   /* світла тема, звичайний стан */
   --filter-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
   /*світла тема, стан hover*/
@@ -163,9 +164,9 @@ body {
   --bg-modal-form: #202024;
   --border-modal-form: #fff;
   --info-book: #fff;
-  --filter: grayscale(100%);
+  --filter-book: grayscale(100%);
   /*темна тема, звичаний стан (для Apple Books)*/
-  --filter: brightness(0) invert(1);
+  --filter-amazon: brightness(0) invert(1);
   /*темна тема, звичайний стан (для Amazon)*/
   --filter-hover: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   /*- темна тема, стан hover*/
