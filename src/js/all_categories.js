@@ -70,6 +70,9 @@ getCategoryList()
 elem.allCategoriesList.addEventListener('click', onCategoryClick);
 
 async function onCategoryClick(evt) {
+
+  evt.preventDefault();
+  
   if (!evt.target.classList.contains('js-categories-list-item')) {
     return;
   }
@@ -81,10 +84,17 @@ async function onCategoryClick(evt) {
 
   const genreByWord = categoryLink.split(' ');
   const lastWord = genreByWord.splice(-1, 1);
-  categoriesBook.innerHTML = `${genreByWord.join(
+  
+  elem.categoriesBooksTitle.innerHTML = `${genreByWord.join(
     ' '
-  )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
-  categoriesBooksTitle.insertAdjacentHTML('afterend');
+    )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+
+
+
+  // categoriesBook.innerHTML = `${genreByWord.join(
+  //   ' '
+  // )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
+  elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
 
   try {
     const booksByListName = await getBooksByCategory(categoryLink);
