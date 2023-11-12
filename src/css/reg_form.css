@@ -1,28 +1,271 @@
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+body {
 
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    border-radius: 18px;
-    border: 2px solid var(--dark);
-    padding: 80px 40px 40px 40px;
-    max-width: 579px;
-}
-
-.close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.theme-light.reg_start {
+    background-color: #4F2EE8;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 20px;
+    max-width: 335px;
+    height: 384px;
+    border-radius: 18px;
+    border: 2px solid var(--border-modal-form);
+    background: var(--bg-modal-form);
+    margin: 50% auto;
+}
+
+.close {
+    padding: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: 14px;
+    right: 14px;
+    border-radius: 20px;
     border: none;
+    background-color: inherit;
+
+}
+
+.close-form-icon {
+    width: 100%;
+    stroke: var(--border-modal-form);
+}
+
+.icon-email {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 130px;
+    right: 44px;
+    stroke: var(--fill-icon-modal-form);
+    fill: var(--bg-modal-form);
+}
+
+.icon-password {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 205px;
+    right: 44px;
+    stroke: var(--fill-icon-modal-form);
+    fill: var(--bg-modal-form);
+}
+
+.registration_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.form_content_inner_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.form-input {
+    max-width: 295px;
+    padding: 16px 173px 16px 24px;
+    border-radius: 40px;
+    border: 2px solid var(--border-modal-form);
+    color: var(--text-form-modal);
+}
+
+input[type="text"]::-webkit-input-placeholder {
+    color: var(--text-form-modal);
+
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+}
+
+input[type="password"]::-webkit-input-placeholder {
+    color: var(--text-form-modal);
+
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+}
+
+input[type="email"]::-webkit-input-placeholder {
+    color: var(--text-form-modal);
+
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+}
+
+.form-button {
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 294px;
+    padding: 16px 110px;
+
+    border-radius: 40px;
+    background: var(---btn-sing-up-modal-form);
+    color: var(---text-btn-sing-up-modal-form);
+}
+
+
+.register-toggle {
+    color: #4F2EE8;
+
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 128.571% */
+    letter-spacing: -0.14px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    background-color: inherit;
+    border: none;
+}
+
+
+.toggle_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.login-toggle {
+    color: rgba(17, 17, 17, 0.50);
+
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 128.571% */
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    background-color: inherit;
+    border: none;
+}
+
+@media screen and (min-width: 1440px) {
+
+    .modal-content {
+        max-width: 579px;
+        height: 516px;
+        padding: 80px 40px 40px 40px;
+    }
+
+    .close {
+        top: 24px;
+        right: 24px;
+    }
+
+    .registration_form {
+        row-gap: 28px;
+    }
+
+    .form-input {
+        max-width: 499px;
+        padding: 20px 173px 20px 40px;
+    }
+
+    .form-button {
+        max-width: 499px;
+        padding: 20px 173px;
+
+    }
+
+    .register-toggle {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.18px;
+    }
+
+    .toggle_buttons {
+        font-family: DM Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        /* 133.333% */
+        letter-spacing: -0.18px;
+    }
+
+    .login-toggle {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.18px;
+    }
+
+    input[type="text"]::-webkit-input-placeholder {
+
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.18px;
+    }
+
+    input[type="password"]::-webkit-input-placeholder {
+
+        font-size: 18px;
+        line-height: 24px;
+        line-height: 18px;
+        letter-spacing: -0.18px;
+
+    }
+
+    input[type="email"]::-webkit-input-placeholder {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.18px;
+    }
+
+    .icon-email {
+        width: 28px;
+        height: 28px;
+        top: 185px;
+        right: 72px;
+    }
+
+    .icon-password {
+        width: 28px;
+        height: 28px;
+        top: 270px;
+        right: 72px;
+    }
 }

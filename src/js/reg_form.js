@@ -100,4 +100,7 @@ function register() {
   }
   function validate_field(field) {
     return field.trim() !== '';
-  }  
+}  
+  
+
+console.log(ParticlesApp)
