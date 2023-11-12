@@ -13,7 +13,7 @@ function createMarkupCategoryList(arr) {
   return arr
     .map(
       ({ list_name }) =>
-        `<li class="categories-list-item js-categories-list-item link"><a href="">${list_name}</a></li>`
+        `<li class="categories-list-item js-categories-list-item"><a href="">${list_name}</a></li>`
     )
     .join('');
 }
@@ -49,8 +49,8 @@ getCategoryList()
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick); 
 
 function onCategoryClick (evt){
-  console.log(evt.target);
   if(!evt.target.classList.contains('.js-categories-list-item'))
   return;
 }
+
 
