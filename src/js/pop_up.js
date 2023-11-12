@@ -201,3 +201,4 @@ function toggleBookInShoppingList(book) {
 }
 
 // createModal('643282b2e85766588626a0f2');
+export { createModal };
