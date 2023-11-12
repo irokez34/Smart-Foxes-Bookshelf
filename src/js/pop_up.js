@@ -103,10 +103,9 @@ function createModal(bookId) {
             modalLinkElementAmazon.href = modalAmazonLink.url;
             modalLinkElementAmazon.target = '_blank';
             modalLinkElementAmazon.innerHTML = `
-        <svg class="mdl-logo-amazon" width="62" height="19">
-    <use href="./img/sprite.svg#"></use>
-</svg>
+        <img class="mdl-logo-amazon" src="./img/amazon.png" alt="logo amazon" width="62" height="19">
     `;
+
 
             modalLinkListItemAmazon.appendChild(modalLinkElementAmazon);
         }
@@ -121,9 +120,7 @@ function createModal(bookId) {
             purchaseLinkElement.href = modalOtherLink.url;
             purchaseLinkElement.target = '_blank';
             purchaseLinkElement.innerHTML = `
-        <svg class="mdl-logo-amazon" width="33" height="32">
-    <use href="./img/sprite.svg#"></use>
-</svg>
+        <img class="mdl-logo-book" src="./img/books.png" alt="logo book" width="33" height="32">
     `;
             modalLinkListItem.appendChild(purchaseLinkElement);
         }
@@ -204,3 +201,4 @@ function toggleBookInShoppingList(book) {
 }
 
 // createModal('643282b2e85766588626a0f2');
+export { createModal };
