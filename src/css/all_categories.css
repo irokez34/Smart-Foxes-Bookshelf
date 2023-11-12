@@ -115,15 +115,20 @@
 .js-categories-list {
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color: rgba(17, 17, 17, 0.6);
+  color:var(--primery-text);
   width: 100%;
 }
 .categories-list-item {
   margin-bottom: 24px;
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--primery-text);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
+}
+.categories-list-item.category-active {
+  color: var(--primery-text-hover-focus);
+  text-transform: uppercase;
+  font-weight: 700;
 }
