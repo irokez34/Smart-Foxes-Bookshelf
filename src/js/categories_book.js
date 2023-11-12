@@ -1,5 +1,6 @@
 import { all } from 'axios';
 import { getTopBooks, getBooksByCategory } from './BOOKS_API';
+// import { createModal } from './pop_up';
 
 const categoriesBooks = document.querySelector('.categories-books');
 const categoriesBook = document.querySelector('.categories-books-all');
@@ -138,6 +139,7 @@ async function onSeeMoreAboutBookBest(event) {
   }
   const parentEl = event.target.closest('.categories-books-genre-book');
   const elemId = parentEl.dataset.id;
+  // await createModal(elemId);
 }
 
 async function onSeeMoreAboutBookGenre(event) {
@@ -146,6 +148,7 @@ async function onSeeMoreAboutBookGenre(event) {
   }
   const parentEl2 = event.target.closest('.categories-books-genre-books');
   const elemId2 = parentEl2.dataset.id;
+  // await createModal(elemId2);
 }
 
 export { onSeeMore, createCardByGenre, addCardByGenre };
