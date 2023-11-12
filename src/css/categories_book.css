@@ -180,6 +180,7 @@
   border: 2px solid var(--btn-see-you-border);
   background-color: var(--btn-see-you-bg);
   margin-bottom: 40px;
+  /* z-index: 999; */
 }
 
 .categories-books-all {
