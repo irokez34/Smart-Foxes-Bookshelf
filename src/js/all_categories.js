@@ -1,5 +1,3 @@
-
-
 import { getCategoryList, getBooksByCategory } from './BOOKS_API.js';
 import {createCardByGenre, addCardByGenre } from './categories_book.js';
 
@@ -55,48 +53,6 @@ async function onCategoryClick(evt) {
   )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 }
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
-
-// function onCategoryClick(evt) {
-//   if (!evt.target.classList.contains('.js-categories-list-item')) {
-//     return;
-//   }
-//   const arrClass = [...elem.allCategoriesContainer.children];
-//   arrClass.map(item => item.classList.remove('category-active'));
-//   evt.target.classList.add('category-active');
-
-//   const categoryName = evt.target.dataset.list_name;
-
-//   if (evt.target.classList.contains('js-all-categories')) {
-//     return;
-//   } else {
-//     getBooksByCategory(categoryName);
-//   }
-// }
-
-// СПРОБА 2
-
-// elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
-
-// async function onCategoryClick(evt) {
-//   if (!evt.target.classList.contains('js-categories-list-item')) {
-//     return;
-//   }
-//   const categoryLink = evt.target.dataset.category;
-//   elem.categoriesBook.innerHTML = categoryLink;
-//   try {
-//     const booksByListName = await getBooksByCategory(categoryLink);
-
-//     const allBooksByGenre = createCardByGenre(booksByListName.data);
-
-//     addCardByGenre(allBooksByGenre);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
-// СПРОБА 100500
-
-elem.allCategoriesList.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
 
 
