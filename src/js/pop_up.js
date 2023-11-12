@@ -103,7 +103,7 @@ function createModal(bookId) {
             modalLinkElementAmazon.href = modalAmazonLink.url;
             modalLinkElementAmazon.target = '_blank';
             modalLinkElementAmazon.innerHTML = `
-        <img class="mdl-logo-amazon" src="./img/amazon.png" alt="logo amazon" width="62" height="19">
+        <img class="mdl-logo-amazon" src="../img/amazon.png" alt="logo amazon" width="62" height="19">
     `;
 
 
