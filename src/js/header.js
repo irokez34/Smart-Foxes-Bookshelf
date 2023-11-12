@@ -1,3 +1,4 @@
+
 (() =>{
     const refs = {
         openMenuBtn: document.querySelector('[data-mobile-menu-open]'),
@@ -15,9 +16,11 @@
      if (isOpen) {
       refs.closeMenuBtn.classList.add('active');
       refs.openMenuBtn.classList.add('hidden');
+      document.body.style.overflow = "hidden";
      }else{
       refs.closeMenuBtn.classList.remove('active');
       refs.openMenuBtn.classList.remove('hidden');
+      document.body.style.overflow = "";  
      }
      }
   
@@ -25,3 +28,15 @@
   })();
 
 
+//   const navMenu = document.getElementById('nav-menu');
+//   const links = navMenu.getElementsByTagName('a');
+  
+
+//   for (let i = 0; i < links.length; i++) {
+//     if (links[i].href === window.location.href) {
+//       links[i].classList.add('link-active');
+//     }else{
+//         links[i].classList.remove('link-active');
+        
+//     }
+//   }
