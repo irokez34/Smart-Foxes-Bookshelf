@@ -1,0 +1,13 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./reset.css');
+@import url('./modern-normalize.css');
+@import url('./components.css');
+@import url('./header.css');
+@import url('./shooping.css');
+@import url('./pagination.css');
+@import url('./back_to_top.css');

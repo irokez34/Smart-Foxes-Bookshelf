@@ -1,0 +1,84 @@
+
+.card {
+  width: 332px;
+  height: 500px;
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+  border-radius: 16px;
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
+  padding: 40px 0 0 26px;
+}
+
+.title {
+  color: #FFF;
+font-family: DM Sans;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px; /* 116.667% */
+letter-spacing: -0.96px;
+
+ 
+}
+.wrap-title{
+  padding-bottom: 25px;
+  display: flex;
+  gap: 12px
+}
+.main-icon{
+  max-width: 32px;
+}
+.slider-btn-support{
+max-width: 32px;
+margin: 0 auto;
+margin-top: 20px;
+}
+.expand-btn.expanded {
+  transform: rotate(180deg);
+  margin-top: 10px; /* Измените значение по необходимости */
+}
+.expand-btn{
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.icon {
+  /* стили для иконки */
+  width: 24px;
+  height: 24px;
+  margin-right: 7px;
+}
+
+.list-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.list-item span{
+  color: #FFF;
+font-family: DM Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 128.571% */
+letter-spacing: -0.56px;
+margin-right: 16px;
+}
+.additional-items {
+  display: none; /* Изначально скрыты */
+}
+.additional-items{display: flex; 
+   flex-direction: column
+} 
+  
+  @media screen and (min-width: 768px) {
+    .suport {
+     width: 335px;
+    }
+}
+     
+  @media screen and (min-width: 1440px) {
+    .suport {
+    width: 335px;
+    }
+    
+  }
