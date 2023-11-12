@@ -1,5 +1,5 @@
 import { getCategoryList } from '../js/BOOKS_API';
-import moduleName from 'module';
+import{ onSeeMore, createCardByGenre, addCardByGenre } from '../js/categories_book';
 
 const elem = {
   allCategoriesContainer: document.querySelector('.all-categories-container'),
