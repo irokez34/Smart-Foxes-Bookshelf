@@ -1,4 +1,107 @@
-.dsad {
+.pagination-container
+{
+    margin-top: 40px;
+}
+
+
+.pagination-btn-left
+{
+    position: relative;
     display: flex;
-    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    border-color: transparent;
+    justify-content: center;
+    background-color: var(--fill-arrow-left-bg);
+    transition: background-color 0.7s ease; 
+}
+.pagination-btn-left:hover
+{
+   
+    background-color: var(--fill-arrow-right-bg);
+    border: 1px solid var(--fill-arrow-right-border);
+}
+.pagination-btn-right
+
+{
+    position: relative;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    border: 1px solid var(--fill-arrow-right-border);
+    justify-content: center;
+    background-color: var(--fill-arrow-right-bg);
+}
+.pagination-arrows
+{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.pagination-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.pagintaion-previous-btn,
+.pagintaion-double-previous-btn
+{
+    fill: var(--fill-arrow-left);  
+}
+.pagination-next-btn,
+.pagination-double-next-btn
+{
+    fill: var(--fill-arrow-right);
+}
+.pagintaion-double-previous-btn
+{
+    position: absolute;
+    left: 5px;
+}
+.pagintaion-double-previous-btn:last-child
+{
+    left:12px
+}
+.pagination-double-next-btn
+{
+    position: absolute;
+    left: 5px;
+}
+.pagination-double-next-btn:last-child
+{
+    left: 12px;
+}
+
+.pagination-pages-btn
+{
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-number);
+    background-color: transparent;
+    border: 1px solid var(--border-bg);
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-pages-numbers
+{
+font-size: 18px;
+font-weight: 700;
+}
+.pagination-pages-btn:active
+{
+    background-color: var(--bg-number-active);
+    border: transparent;
+    color: var(--color-number-active);
 }
