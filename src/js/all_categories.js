@@ -1,5 +1,5 @@
-import { getCategoryList, getBooksByCategory } from '../js/BOOKS_API';
-import { createCardByGenre, addCardByGenre } from '../js/categories_book';
+import { getCategoryList, getBooksByCategory } from './js/BOOKS_API';
+import { createCardByGenre, addCardByGenre } from './js/categories_book';
 
 const elem = {
   allCategoriesContainer: document.querySelector('.all-categories-container'),
@@ -78,6 +78,9 @@ getCategoryList()
 elem.allCategoriesList.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
 
+
+// Акцент по кліку + preventDefault
+
 function clickAccent(evt) {
   const firstListItem = document.querySelector(
     '.js-categories-list li:first-of-type'
@@ -93,7 +96,7 @@ function clickAccent(evt) {
 
   evt.target.classList.add('category-active');
 }
-
+// Рендер по кліку
 async function onCategoryClick(evt) {
   clickAccent(evt);
 
@@ -104,7 +107,6 @@ if (!evt.target.classList.contains('js-categories-list-item')) {
 }
 
 const categoryLink = evt.target.dataset.category;
-
 const genreByWord = categoryLink.split(' ');
 const lastWord = genreByWord.splice(-1, 1);
 
@@ -119,9 +121,7 @@ elem.categoriesBooksTitle.insertAdjacentHTML('afterend');
 
 try {
   const booksByListName = await getBooksByCategory(target.attributes.value.nodeValue);
-
   const allBooksByGenre = createCardByGenre(booksByListName.data);
-
   addCardByGenre(allBooksByGenre);
 } catch (err) {
   console.log(err);
