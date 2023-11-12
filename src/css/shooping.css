@@ -23,6 +23,15 @@
     border: 2px solid rgba(79, 46, 232, 0.40);
     background: #FFF;
 }
+.shopping-box:nth-child(3) {
+  margin-top: 20px;
+}
+.shopping-box:nth-child(4) {
+  margin-top: 20px;
+}
+.shopping-box:nth-child(5) {
+  margin-top: 20px;
+}
 .shopping-list {
   display: flex;
     flex-wrap: wrap;
