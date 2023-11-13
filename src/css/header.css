@@ -255,7 +255,15 @@ input:checked+.slider:before {
 
   }
 
-  .acount-log-in {
+
+.mobile-header-button{
+  
+  display: inline-flex;
+
+}
+
+  .acount-log-up {
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -265,7 +273,7 @@ input:checked+.slider:before {
     padding: 15px 14px;
     color: var(--white);
     font-weight: 500;
-
+   
 
   }
 
@@ -274,13 +282,11 @@ input:checked+.slider:before {
   }
 
 
-
-
-
+ .header-link-log-up {
+display: none;
 }
 
-
-
+}
 
 
 
@@ -315,6 +321,19 @@ input:checked+.slider:before {
   }
 
 
+  .link-active{
+    background: var(--yellow);
+    text-align: center;
+    font-weight: 700;
+    color: var(--black-2);
+    padding: 8px 16px;
+    border-radius: 36px;
+    color: var(--border-header);
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    height: 34px;
+  }
 
   .header-link {
     color: var(--border-header);
@@ -323,7 +342,6 @@ input:checked+.slider:before {
     padding: 8px 16px;
     height: 34px;
   }
-
 
 
   .header-link:hover,
@@ -364,11 +382,11 @@ input:checked+.slider:before {
     justify-content: center;
   }
 
-  .header-button {
+  .header-link-log-up {
     display: block;
   }
 
-  .acount-log-in {
+  .acount-log-up {
     display: flex;
     justify-content: center;
     align-items: center;
