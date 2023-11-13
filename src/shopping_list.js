@@ -6,4 +6,3 @@ import "./js/shopping.js";
 import "./js/pagination.js";
 import "./js/back_to_top.js";
 import "./js/pop_up.js";
-
