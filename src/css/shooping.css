@@ -22,6 +22,7 @@
     letter-spacing: -1.28px;
 }
 .shopping-box {
+  position: relative;
   display: flex;
   width: 335px;
   height: 170px;
@@ -156,7 +157,8 @@
   }
 }
 .shopping-remove-btn {
-  margin-left: 165px;
+  top: 14px;
+  right: 20px;
   position: absolute;
   border-color: #4F2EE8;
     width: 28px;
@@ -166,6 +168,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .shopping-remove-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .remove-btn {
+    width: 18px;
+    height: 18px;
+  }
 }
 .shopping-default-text {
   width: 244px;
