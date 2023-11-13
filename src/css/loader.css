@@ -12,6 +12,7 @@
   }
   
   @keyframes shadowPulse {
+    
     33% {
       background: var(--active-color);
       box-shadow: -24px 0 var(--hover-color), 24px 0 var(--active-color);
