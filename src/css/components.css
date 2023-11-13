@@ -72,6 +72,7 @@ body {
   /*allCategori*/
   --primery-text: rgba(17, 17, 17, 0.6);
   --primery-text-hover-focus: #4f2ee8;
+  --scroll-bar-color:#E0E0E0;
 
   /*home*/
   --best-sellers-text-title-color: #111;
@@ -151,6 +152,7 @@ body {
   /*allCategori*/
   --primery-text: rgba(255, 255, 255, 0.6);
   --primery-text-hover-focus: #eac645;
+  --scroll-bar-color: rgba(17, 17, 17, 0.60);
 
   /*home*/
   --best-sellers-text-title-color: #fff;

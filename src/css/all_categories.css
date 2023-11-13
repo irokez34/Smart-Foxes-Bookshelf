@@ -142,14 +142,24 @@
 .categories-list-item:focus {
   cursor: pointer;
 }
-/* .categories-list-item.category-active {
-  color: var(--primery-text-hover-focus);
-  text-transform: uppercase;
-  font-weight: 700;
-} */
 
 .category-active {
   color: var(--primery-text-hover-focus);
   text-transform: uppercase;
   font-weight: 700;
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: var(--scroll-bar-color);
+}
+/* --scroll-bar-color: rgba(17, 17, 17, 0.60);
+--scroll-bar-color:#E0E0E0; */
