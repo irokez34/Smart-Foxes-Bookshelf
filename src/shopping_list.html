@@ -19,26 +19,13 @@
   <main class="main container">
     <section class="shopping-container">
       <h1 class="shopping-title">Shopping <span class="shooping-title-text">List</span></h1>
-      <div class="shopping-box">
-        <div class="shopping-book-img">
-          <img class="shopping-genre-img" src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
-            alt="Title - 'WISH'" width="100" height="142">
-        </div>
-        <div class="shopping-book-info">
-          <h2 class="shopping-book-title">Назва книги</h2>
-          <span class="shopping-book-category">Категорія</span>
-          <p class="shopping-book-discription">Опис книги</p>
-          <span class="shopping-book-author">Автор</span>
-          <a href=""></a>
-          <a href=""></a>
-          <!-- <button class="shopping-remove-btn" type="button">
-            <svg class="remove-btn" width="16" height="16">
-              <use href="./img/sprite.svg#icon-trash"></use>
-            </svg>
-          </button> -->
+      <div class="shopping-default">
+        <p class="shopping-default-text">This page is empty, add some books and proceed to order.</p>
+        <div class="shopping-default-img">
+          <img src="./img/shop_none.png" alt="shopping list is empty">
         </div>
       </div>
-      <div class="shopping-box">
+      <div class="shopping-box is-hidden">
         <div class="shopping-book-img">
           <img class="shopping-genre-img" src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
             alt="Title - 'WISH'" width="100" height="142">
@@ -51,34 +38,12 @@
           <a href=""></a>
           <a href=""></a>
         </div>
+        <button class="shopping-remove-btn" type="button">
+          <svg class="remove-btn" width="16" height="16">
+            <use href="./img/sprite.svg#icon-trash"></use>
+          </svg>
+        </button>
       </div>
-      <div class="shopping-box">
-        <div class="shopping-book-img">
-          <img class="shopping-genre-img" src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
-            alt="Title - 'WISH'" width="100" height="142">
-        </div>
-        <div class="shopping-book-info">
-          <h2 class="shopping-book-title">Назва книги</h2>
-          <span class="shopping-book-category">Категорія</span>
-          <p class="shopping-book-discription">Опис книги</p>
-          <span class="shopping-book-author">Автор</span>
-          <a href=""></a>
-          <a href=""></a>
-        </div>
-      </div>
-      <div class="shopping-box">
-        <div class="shopping-book-img">
-          <img class="shopping-genre-img" src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
-            alt="Title - 'WISH'" width="100" height="142">
-        </div>
-        <div class="shopping-book-info">
-          <h2 class="shopping-book-title">Назва книги</h2>
-          <span class="shopping-book-category">Категорія</span>
-          <p class="shopping-book-discription">Опис книги</p>
-          <span class="shopping-book-author">Автор</span>
-        </div>
-      </div>
-
     </section>
   </main>
   <load src="partials/pagination.html" />

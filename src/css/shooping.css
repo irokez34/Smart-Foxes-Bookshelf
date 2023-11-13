@@ -22,6 +22,7 @@
     letter-spacing: -1.28px;
 }
 .shopping-box {
+  position: relative;
   display: flex;
   width: 335px;
   height: 170px;
@@ -156,8 +157,10 @@
   }
 }
 .shopping-remove-btn {
-  margin-left: 165px;
+  top: 14px;
+  right: 20px;
   position: absolute;
+  border-color: #4F2EE8;
     width: 28px;
     height: 28px;
     background-color: #4F2EE8;
@@ -165,5 +168,63 @@
     display: flex;
     align-items: center;
     justify-content: center;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (min-width: 768px) {
+  .shopping-remove-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .remove-btn {
+    width: 18px;
+    height: 18px;
+  }
+}
+.shopping-default-text {
+  width: 244px;
+  height: 36px;
+  margin-top: 120px;
+  margin-left: 46px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
+@media only screen and (min-width: 768px) {
+  .shopping-default-text {
+    margin-top: 140px;
+    margin-left: 178px;
+    width: 349px;
+    height: 48px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .shopping-default-text {
+    margin-left: 201px;
+
+  }
+}
+.shopping-default-img {
+  margin-top: 14px;
+  margin-left: 35px;
+  width: 265px;
+  height: 198px;
+}
+@media only screen and (min-width: 768px) {
+  .shopping-default-img {
+    width: 332px;
+    height: 241px;
+    margin-top: 20px;
+    margin-left: 192px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .shopping-default-img {
+    margin-left: 228px;
+  }
 }
