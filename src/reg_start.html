@@ -1,72 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Реєстрація</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reg_start.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registration</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/reg_start.css" />
-</head>
-
-<body class="theme-light reg_start">
-  <main class="container">
-    <button onclick="openModal()">Open Modal</button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <button class="close" onclick="closeModal()">
-          <svg class="close-form-icon" viewBox="0 0 32 32">
-            <use href="./img/sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-        <div class="form_container" id="form_content_container">
-          <div class="form_content_inner_container">
-            <!-- Форма реєстрації -->
-            <div class="registration_form" id="registration_form">
-              <input type="text" id="registration_name" class="form-input" placeholder="Name" />
-              <input type="email" id="registration_email" class="form-input" placeholder="Email" /><svg
-                class="icon-email" viewBox="0 0 28 28">
-                <use href="./img/sprite.svg#email"></use>
-              </svg>
-
-              <input type="password" id="registration_password" class="form-input" placeholder="Password" /><svg
-                class="icon-password" viewBox="0 0 28 28">
-                <use href="./img/sprite.svg#icon-lock"></use>
-              </svg>
-              <button onclick="register()" class="form-button">
-                Sign Up
-              </button>
-            </div>
-            <!-- Форма логіну -->
-            <div id="login_form" style="display: none">
-              <input type="email" id="login_email" class="form-input" placeholder="Email" />
-              <input type="password" id="login_password" class="form-input" placeholder="Password" />
-              <button onclick="login()" class="form-button">Sign In</button>
-            </div>
-            <!-- Перемикачі -->
-            <div class="toggle_buttons" id="toggle_buttons">
-              <button onclick="showRegistrationForm()" class="register-toggle active">
-                Sign Up
-              </button>
-              <button onclick="showLoginForm()" class="login-toggle">
-                Sign In
-              </button>
+  <body class="theme-light reg_start" id="reg_start">
+    <main class="container">
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <button class="close" id="closeModalButton">
+            <svg class="close-form-icon" viewBox="0 0 32 32">
+              <use href="./img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="form_container" id="form_content_container">
+            <div class="form_content_inner_container">
+              <!-- Форма реєстрації -->
+              <div class="registration_form" id="registration_form">
+                <input
+                  type="text"
+                  id="registration_name"
+                  class="form-input"
+                  placeholder="Ім'я"
+                />
+                <input
+                  type="email"
+                  id="registration_email"
+                  class="form-input"
+                  placeholder="Електронна пошта"
+                />
+                <svg class="icon-email" viewBox="0 0 28 28">
+                  <use href="./img/sprite.svg#email"></use>
+                </svg>
+                <input
+                  type="password"
+                  id="registration_password"
+                  class="form-input"
+                  placeholder="Пароль"
+                />
+                <svg class="icon-password" viewBox="0 0 28 28">
+                  <use href="./img/sprite.svg#icon-lock"></use>
+                </svg>
+                <button class="form-button" id="registerButton">
+                  Зареєструватися
+                </button>
+              </div>
+              <!-- Форма входу -->
+              <div id="login_form" class="login_form" style="display: none">
+                <input
+                  type="email"
+                  id="login_email"
+                  class="form-input"
+                  placeholder="Електронна пошта"
+                />
+                <input
+                  type="password"
+                  id="login_password"
+                  class="form-input"
+                  placeholder="Пароль"
+                />
+                <button class="form-button" id="loginButton">Увійти</button>
+              </div>
+              <!-- Перемикачі -->
+              <div class="toggle_buttons clicked" id="toggle_buttons">
+                <button class="register-toggle" id="showRegistrationFormButton">
+                  Зареєструватися
+                </button>
+                <button class="login-toggle" id="showLoginFormButton">
+                  Увійти
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Скрипки статистики бази даних -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-  </main>
-  <script type="module" src="reg_start.js"></script>
-</body>
-
+      <!-- Скрипти для бази даних Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    </main>
+    <script type="module" src="reg_start.js"></script>
+  </body>
 </html>
