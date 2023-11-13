@@ -1,12 +1,12 @@
 // Конфігурація бази данних
 const firebaseConfig = {
-    apiKey: "AIzaSyA9CLWz8je6lpN_T6IoDYOeBn4bsK9jSK8",
-    authDomain: "bookshelf-smart-foxes.firebaseapp.com",
-    projectId: "bookshelf-smart-foxes",
-    storageBucket: "bookshelf-smart-foxes.appspot.com",
-    messagingSenderId: "719401160352",
-    appId: "1:719401160352:web:0617680c3d6e31123ec3c5",
-    measurementId: "G-7B8E53CR8P"
+  apiKey: "AIzaSyAQpcHlYnmJgrkoX3KbdR3qCIHswCf3vaM",
+  authDomain: "bookshelf-smartfoxes-team.firebaseapp.com",
+  projectId: "bookshelf-smartfoxes-team",
+  storageBucket: "bookshelf-smartfoxes-team.appspot.com",
+  messagingSenderId: "615845871184",
+  appId: "1:615845871184:web:f8e6e3da332e48b2721b55",
+  measurementId: "G-J4EFJFQ0WD"
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -15,7 +15,7 @@ const database = firebase.database();
 // Функція для закриття модального вікна
 function closeModal() {
   document.getElementById('myModal').style.display = 'none';
-  document.location.href="../index.html"
+  document.location.href = "./index.html";
 }
 
 // Функція для показу форми реєстрації
