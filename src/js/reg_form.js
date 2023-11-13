@@ -15,7 +15,7 @@ const database = firebase.database();
 // Функція для закриття модального вікна
 function closeModal() {
   document.getElementById('myModal').style.display = 'none';
-  document.getElementById('reg_start').style.display = "none"
+  document.location.href="../index.html"
 }
 
 // Функція для показу форми реєстрації
@@ -53,6 +53,7 @@ function register() {
       database_ref.child('users/' + user.uid).set(user_data);
       alert('Registration successful!');
       clearRegistrationForm();
+      document.location.href="../index.html"
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
@@ -80,6 +81,8 @@ function login() {
       alert('Login successful!');
       displayUserInfo(user);
       clearLoginForm();
+      document.location.href="../index.html"
+
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
@@ -141,3 +144,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+function loginWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      const user = result.user;
+    })
+    .catch((error) => {
+      console.error('Помилка входу через Google:', error);
+    });
+}
+document.getElementById('googleSignInButton').addEventListener('click', loginWithGoogle);

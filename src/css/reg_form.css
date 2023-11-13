@@ -37,6 +37,9 @@ body {
   border: none;
   background-color: inherit;
 }
+.close:hover {
+  background-color: #4285f4;
+}
 
 .close-form-icon {
   width: 100%;
@@ -139,7 +142,7 @@ input[type='email']::-webkit-input-placeholder {
 }
 
 .register-toggle {
-  /* color: #4f2ee8; */
+  color: #4f2ee8;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -167,7 +170,6 @@ input[type='email']::-webkit-input-placeholder {
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
-  /* 128.571% */
   letter-spacing: -0.14px;
   text-transform: uppercase;
   background-color: inherit;
@@ -255,4 +257,12 @@ input[type='email']::-webkit-input-placeholder {
     top: 270px;
     right: 72px;
   }
+}
+#googleSignInButton {
+  background-color: #4285f4;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
 }
