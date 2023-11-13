@@ -194,6 +194,7 @@
   }
 }
 .shopping-default-text {
+  color: var(--primery-text);
   width: 244px;
   height: 36px;
   margin-top: 120px;
