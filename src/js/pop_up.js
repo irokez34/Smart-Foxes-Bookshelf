@@ -126,26 +126,39 @@ function createModal(bookId) {
         }
 
         const modalShoppingListButton = document.createElement('button');
-        modalShoppingListButton.classList.add('mdl-main-btn');
-        modalShoppingListButton.textContent = 'Add to shopping list';
+  modalShoppingListButton.classList.add('mdl-main-btn');
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
-        const modalCongratsText = document.createElement('p');
-        modalCongratsText.classList.add('confirmation-text');
-       modalCongratsText.innerHTML = 'Congratulations! You have added the book to the shopping list. To delete, press the button &rdquo;Remove from the shopping list&ldquo;.';
+  const isBookInShoppingList = shoppingList.some(
+    (listBook) => listBook.title === bookData.title
+  );
 
-        modalCongratsText.style.display = 'none';
+  if (isBookInShoppingList) {
+    modalShoppingListButton.textContent = 'Remove from shopping list';
+  } else {
+    modalShoppingListButton.textContent = 'Add to shopping list';
+  }
 
-        modalShoppingListButton.addEventListener('click', (event) => {
+  const modalCongratsText = document.createElement('p');
+  modalCongratsText.classList.add('confirmation-text');
+  modalCongratsText.innerHTML =
+    'Congratulations! You have added the book to the shopping list. To delete, press the button &rdquo;Remove from the shopping list&ldquo;.';
+
+  modalCongratsText.style.display = isBookInShoppingList ? 'block' : 'none';
+
+  modalShoppingListButton.addEventListener('click', (event) => {
     event.stopPropagation();
+
     const isBookAdded = toggleBookInShoppingList(bookData);
+
     if (isBookAdded) {
-        modalShoppingListButton.textContent = 'Remove from the shopping list';
-        modalCongratsText.style.display = 'block';
+      modalShoppingListButton.textContent = 'Remove from shopping list';
+      modalCongratsText.style.display = 'block';
     } else {
-        modalShoppingListButton.textContent = 'Add to shopping list';
-        modalCongratsText.style.display = 'none';
+      modalShoppingListButton.textContent = 'Add to shopping list';
+      modalCongratsText.style.display = 'none';
     }
-});
+  });
 
         modal.appendChild(modalShoppingListButton);
         modal.appendChild(modalCongratsText);
