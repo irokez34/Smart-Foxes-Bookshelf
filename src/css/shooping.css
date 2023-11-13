@@ -1,6 +1,6 @@
 
 .shopping-title {
-  color: #111;
+  color: var(--best-sellers-text-title-color);
     font-size: 32px;
     font-weight: 700;
     line-height: 38px;
@@ -27,8 +27,8 @@
   height: 170px;
   margin-top: 40px;
   border-radius: 16px;
-    border: 2px solid rgba(79, 46, 232, 0.40);
-    background: #fff;
+    border: 2px solid var(---border);
+    background: var(--background);
 }
 @media only screen and (min-width: 768px) {
   .shopping-box {
@@ -113,6 +113,7 @@
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .shopping-book-title {
+  color: var(--best-sellers-text-title-color);
   font-size: 16px;
     font-weight: 700;
     line-height: 18px;
@@ -128,6 +129,7 @@
     letter-spacing: 0.36px;
 }
 .shopping-book-discription {
+  color: var(--best-sellers-text-title-color);
   padding-top: 8px;
   width: 193px;
   height: 68px;
@@ -192,6 +194,7 @@
   }
 }
 .shopping-default-text {
+  color: var(--primery-text);
   width: 244px;
   height: 36px;
   margin-top: 120px;
@@ -264,7 +267,7 @@ bottom: 14px;
 .mdl-logo-book {
   width: 16px;
   height: 16px;
-  filter: var(--filter-amazon);
+  filter: var(--filter-book);
     transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media only screen and (min-width: 768px) {
