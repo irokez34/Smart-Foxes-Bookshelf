@@ -66,7 +66,8 @@ margin-right: 16px;
 .additional-items {
   display: none; /* Изначально скрыты */
 }
-.additional-items{display: flex; 
+.additional-items{
+  display: flex; 
    flex-direction: column
 } 
   
