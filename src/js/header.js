@@ -1,42 +1,15 @@
 
-(() =>{
-    const refs = {
-        openMenuBtn: document.querySelector('[data-mobile-menu-open]'),
-       closeMenuBtn:document.querySelector('[data-mobile-menu-close]'), 
-       mobileMenu:document.querySelector('[data-mobile-menu]'),
-    };
-  
-    refs.openMenuBtn.addEventListener('click',toggleModal);
-    refs.closeMenuBtn.addEventListener('click', toggleModal);
-  
-  
-    function toggleModal(){
-     const isOpen = refs.mobileMenu.classList.toggle('is-active');
-     
-     if (isOpen) {
-      refs.closeMenuBtn.classList.add('active');
-      refs.openMenuBtn.classList.add('hidden');
-      document.body.style.overflow = "hidden";
-     }else{
-      refs.closeMenuBtn.classList.remove('active');
-      refs.openMenuBtn.classList.remove('hidden');
-      document.body.style.overflow = "";  
-     }
-     }
-  
-  
-  })();
 
-
-//   const navMenu = document.getElementById('nav-menu');
-//   const links = navMenu.getElementsByTagName('a');
+  const navMenu = document.getElementById('nav-menu');
+  const links = navMenu.getElementsByTagName('a');
   
 
-//   for (let i = 0; i < links.length; i++) {
-//     if (links[i].href === window.location.href) {
-//       links[i].classList.add('link-active');
-//     }else{
-//         links[i].classList.remove('link-active');
+  for (let i = 0; i < links.length; i++) {
+    if (links[i].href === window.location.href) {
+      links[i].classList.add('link-active');
+    }else{
+        links[i].classList.remove('link-active');
         
-//     }
-//   }
+    }
+    console.log(links[i].href);
+  }
