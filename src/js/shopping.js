@@ -34,7 +34,7 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
          shoppingDefaultEl.classList.remove('is-hidden');
      } else {
          shoppingDefaultEl.classList.add('is-hidden');
-         shoppingTitleEl.insertAdjacentHTML('afterend', result);
+         shoppingTitleEl.insertAdjacentHTML('afterend', result.join(''));
     }   
 }
 
