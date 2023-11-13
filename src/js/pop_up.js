@@ -134,7 +134,7 @@ function createModal(bookId) {
   );
 
   if (isBookInShoppingList) {
-    modalShoppingListButton.textContent = 'Remove from shopping list';
+    modalShoppingListButton.textContent = 'Remove from the shopping list';
   } else {
     modalShoppingListButton.textContent = 'Add to shopping list';
   }
@@ -152,7 +152,7 @@ function createModal(bookId) {
     const isBookAdded = toggleBookInShoppingList(bookData);
 
     if (isBookAdded) {
-      modalShoppingListButton.textContent = 'Remove from shopping list';
+      modalShoppingListButton.textContent = 'Remove from the shopping list';
       modalCongratsText.style.display = 'block';
     } else {
       modalShoppingListButton.textContent = 'Add to shopping list';
