@@ -53,7 +53,7 @@ function register() {
       database_ref.child('users/' + user.uid).set(user_data);
       alert('Registration successful!');
       clearRegistrationForm();
-      document.location.href="../index.html"
+      document.location.href="./index.html"
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
@@ -81,7 +81,7 @@ function login() {
       alert('Login successful!');
       displayUserInfo(user);
       clearLoginForm();
-      document.location.href="../index.html"
+      document.location.href="./index.html"
 
     })
     .catch((error) => {
