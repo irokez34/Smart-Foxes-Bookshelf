@@ -141,6 +141,7 @@
 .categories-list-item:hover,
 .categories-list-item:focus {
   cursor: pointer;
+  color: var(--primery-text-hover-focus);
 }
 
 .category-active {
