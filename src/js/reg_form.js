@@ -12,6 +12,17 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
+// Function to save user data to local storage
+function saveUserDataToLocalStorage(userData) {
+  localStorage.setItem('user_data', JSON.stringify(userData));
+}
+
+// Function to retrieve user data from local storage
+function getUserDataFromLocalStorage() {
+  const userDataString = localStorage.getItem('user_data');
+  return userDataString ? JSON.parse(userDataString) : null;
+}
+
 // Функція для закриття модального вікна
 function closeModal() {
   document.getElementById('myModal').style.display = 'none';
@@ -51,9 +62,10 @@ function register() {
         last_login: Date.now()
       };
       database_ref.child('users/' + user.uid).set(user_data);
+      saveUserDataToLocalStorage(user_data);
       alert('Registration successful!');
       clearRegistrationForm();
-      document.location.href="./index.html"
+      document.location.href = "./index.html";
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
@@ -78,11 +90,11 @@ function login() {
         last_login: Date.now()
       };
       database_ref.child('users/' + user.uid).update(user_data);
+      saveUserDataToLocalStorage(user_data);
       alert('Login successful!');
       displayUserInfo(user);
       clearLoginForm();
-      document.location.href="./index.html"
-
+      document.location.href = "./index.html";
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
@@ -119,7 +131,14 @@ function clearLoginForm() {
 // Функція для виведення імені користувача
 function displayUserInfo(user) {
   const userInfoContainer = document.getElementById('user_info');
-  userInfoContainer.textContent = `Welcome, ${user.displayName || user.email}!`;
+  const userNameElement = document.querySelector('.user-name');
+
+  if (userInfoContainer && userNameElement) {
+    userInfoContainer.textContent = `Welcome, ${user.displayName || user.email}!`;
+    userNameElement.textContent = user.displayName || user.email;
+  } else {
+    console.error("Element with id 'user_info' or class 'user-name' not found.");
+  }
 }
 
 // Додавання слухача подій до елементів
@@ -143,16 +162,32 @@ document.addEventListener('DOMContentLoaded', () => {
       login();
     }
   });
-});
-function loginWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
 
-  auth.signInWithPopup(provider)
-    .then((result) => {
-      const user = result.user;
-    })
-    .catch((error) => {
-      console.error('Помилка входу через Google:', error);
-    });
-}
-document.getElementById('googleSignInButton').addEventListener('click', loginWithGoogle);
+  // Логін з гугла
+  function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((error) => {
+        console.error('Помилка входу через Google:', error);
+      });
+  }
+  document.getElementById('googleSignInButton').addEventListener('click', loginWithGoogle);
+  
+
+  // Функція логаут
+  function logout() {
+    localStorage.removeItem('user_data');
+    auth.signOut()
+      .then(() => {
+        document.location.href = "/";
+      })
+      .catch((error) => {
+        console.error('Logout failed:', error);
+      });
+  }
+  document.getElementById('logoutButton').addEventListener('click', logout);
+});
