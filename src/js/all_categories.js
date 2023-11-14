@@ -8,6 +8,9 @@ const elem = {
   categoriesBook: document.querySelector('.categories-books-all'),
   categoriesBooksTitle: document.querySelector('.categories-books-title'),
 };
+const firstListItem = document.querySelector(
+  '.js-categories-list li:first-of-type'
+);
 
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
@@ -37,20 +40,16 @@ getCategoryList()
 // Акцент по кліку + preventDefault
 
 function clickAccent(evt) {
-  const firstListItem = document.querySelector(
-    '.js-categories-list li:first-of-type'
-  );
-
-  const isFirstElement = firstListItem === evt.currentTarget;
+  const isFirstElement = firstListItem === evt.target;
 
   if (isFirstElement) {
     !evt.preventDefault();
-  }
+  };
 
   const isClickOnLiEl = evt.target.tagName === 'LI';
 
   if (isClickOnLiEl) {
-    const arrClass = document.querySelectorAll('.js-categories-list li');
+    const arrClass = [...elem.allCategoriesList.children];
     arrClass.forEach(item => item.classList.remove('category-active'));
     evt.target.classList.add('category-active');
   }
@@ -79,3 +78,4 @@ async function onCategoryClick(evt) {
     ' '
   )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 }
+
