@@ -45,7 +45,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  window.location.href = "#";
+  window.location.href = "/";
 }
 function toggleFormVisibility(showForm, hideForm) {
   elements[showForm].style.display = "flex";
@@ -81,8 +81,10 @@ function register() {
       database_ref.child('users/' + user.uid).set(user_data);
       saveUserDataToLocalStorage(user_data);
       alert('Registration successful!');
+      console.log("Name:", name);
+      console.log("Email:", email);
       clearRegistrationForm();
-      window.location.href = "#";
+      window.location.href = "/";
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
@@ -108,9 +110,10 @@ function login() {
       database_ref.child('users/' + user.uid).update(user_data);
       saveUserDataToLocalStorage(user_data);
       alert('Login successful!');
+      console.log("Email:", email);
       displayUserInfo(user);
       clearLoginForm();
-      window.location.href = "#";
+      window.location.href = "/";
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
