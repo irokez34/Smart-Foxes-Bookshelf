@@ -32,7 +32,7 @@ function createModal(bookId) {
   const closeModalButton = document.createElement('button');
   closeModalButton.classList.add('mdl-btn-icon-x');
   closeModalButton.innerHTML = `
-        <svg class="mdl-icon-x" width="24" height="24">
+        <svg class="mdl-icon-x" width="24" height="24" viewBox="0 0 32 32">
         <use href="${iconTrash}#icon-close"></use>
     </svg>
     `;
