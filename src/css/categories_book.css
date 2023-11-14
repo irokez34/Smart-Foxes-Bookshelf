@@ -122,7 +122,7 @@
   justify-content: center;
   align-items: center;
 
-  bottom: 0px;
+  bottom: -0.5px;
   position: absolute;
 
   transform: translateY(100%);
@@ -180,6 +180,7 @@
   border: 2px solid var(--btn-see-you-border);
   background-color: var(--btn-see-you-bg);
   margin-bottom: 40px;
+  /* z-index: 999; */
 }
 
 .categories-books-all {

@@ -1,6 +1,10 @@
 .pagination-container
 {
     margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -90,18 +94,22 @@
     color: var(--color-number);
     background-color: transparent;
     border: 1px solid var(--border-bg);
-    gap: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.pagination-pages-numbers
-{
-font-size: 18px;
-font-weight: 700;
-}
-.pagination-pages-btn:active
+
+.pagination-pages-btn-active
 {
     background-color: var(--bg-number-active);
     border: transparent;
     color: var(--color-number-active);
+}
+.pagination-pages
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

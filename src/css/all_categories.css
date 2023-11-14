@@ -115,9 +115,20 @@
 .js-categories-list {
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color:var(--primery-text);
+  color: var(--primery-text);
   width: 100%;
 }
+
+.all-categories-container::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 167px;
+  border-radius: 12px;
+  color: #2a2727;
+}
+.all-categories-container::-webkit-scrollbar-button {
+  width: 0;
+}
+
 .categories-list-item {
   margin-bottom: 24px;
   color: var(--primery-text);
@@ -127,8 +138,28 @@
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
 }
-.categories-list-item.category-active {
+.categories-list-item:hover,
+.categories-list-item:focus {
+  cursor: pointer;
+}
+
+.category-active {
   color: var(--primery-text-hover-focus);
   text-transform: uppercase;
   font-weight: 700;
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: var(--scroll-bar-color);
+}
+/* --scroll-bar-color: rgba(17, 17, 17, 0.60);
+--scroll-bar-color:#E0E0E0; */

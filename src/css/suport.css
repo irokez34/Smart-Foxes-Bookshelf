@@ -1,15 +1,17 @@
-
 .card {
+
   width: 332px;
   height: 484px;
+
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
   border-radius: 16px;
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
-  padding: 40px 0 0 26px;
+  padding: 28px 102px 72px 40px;
 }
 
 .title {
   color: #FFF;
+
 font-family: DM Sans;
 font-size: 24px;
 font-style: normal;
@@ -19,10 +21,12 @@ letter-spacing: -0.96px;
 
 
  
+
 }
-.wrap-title{
-  padding-bottom: 25px;
+
+.wrap-title {
   display: flex;
+
   gap: 12px;
   margin-bottom: 30px;
 }
@@ -33,15 +37,21 @@ letter-spacing: -0.96px;
 max-width: 32px;
 margin: 0 auto;
 
+
 }
-.expand-btn.expanded {
-  transform: rotate(180deg);
-  margin-top: 10px; /* Измените значение по необходимости */
+
+.main-icon {
+  width: 20px;
+  height: 32px;
 }
-.expand-btn{
+
+.slider-btn-support {
+  max-width: 32px;
   margin: 0 auto;
-  cursor: pointer;
+  margin-top: 20px;
 }
+
+.expand-btn {}
 
 .icon {
   /* стили для иконки */
@@ -50,38 +60,45 @@ margin: 0 auto;
   margin-right: 7px;
 }
 
-.list-item{
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.list-item {
   display: flex;
   align-items: center;
+
   margin-bottom: 20px;
+
 }
-.list-item span{
+
+
+.list-item span {
   color: #FFF;
-font-family: DM Sans;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; /* 128.571% */
-letter-spacing: -0.56px;
-margin-right: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  margin-right: 16px;
 }
+
 .additional-items {
-  display: none; /* Изначально скрыты */
+  display: none;
+  /* Изначально скрыты */
 }
-.additional-items{
-  display: flex; 
-   flex-direction: column
-} 
-  
-  @media screen and (min-width: 768px) {
-    .suport {
-     width: 335px;
-    }
+
+.additional-items {
+  display: flex;
+  flex-direction: column
 }
-     
-  @media screen and (min-width: 1440px) {
-    .suport {
+
+@media screen and (min-width: 768px) {
+  .card {
     width: 335px;
-    }
-    
+    height: 474px;
   }
+}
+
+@media screen and (min-width: 1440px) {}
