@@ -135,6 +135,11 @@
   line-height: 18px;
   letter-spacing: -0.64px;
   text-transform: uppercase;
+  width: 144px;
+    height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .shopping-book-category {
@@ -150,8 +155,9 @@
   color: var(--best-sellers-text-title-color);
   padding-top: 8px;
   width: 193px;
-  height: 68px;
-  overflow: hidden;
+    height: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -190,8 +196,8 @@
 }
 
 .shopping-remove-btn {
-  top: 10px;
-  right: 5px;
+  top: 14px;
+  right: 14px;
   position: absolute;
   border-color: #4F2EE8;
   width: 28px;
@@ -205,10 +211,10 @@
 
 @media only screen and (min-width: 768px) {
   .shopping-remove-btn {
-    width: 34px;
-    height: 34px;
     top: 24px;
     right: 24px;
+    width: 34px;
+    height: 34px;
   }
 }
 
