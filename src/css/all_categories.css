@@ -141,6 +141,7 @@
 .categories-list-item:hover,
 .categories-list-item:focus {
   cursor: pointer;
+  color: var(--primery-text-hover-focus);
 }
 
 .category-active {
@@ -161,5 +162,4 @@
   border-radius: 12px;
   background: var(--scroll-bar-color);
 }
-/* --scroll-bar-color: rgba(17, 17, 17, 0.60);
---scroll-bar-color:#E0E0E0; */
+
