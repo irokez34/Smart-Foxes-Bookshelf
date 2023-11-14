@@ -14,8 +14,8 @@
   
   <script type="module" crossorigin src="/Smart-Foxes-Bookshelf/commonHelpers3.js"></script>
   <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/toggle_theme-056aedf1.js">
-  <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/back_to_top-62c9c55b.js">
-  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/shopping_list-826bc981.css">
+  <link rel="modulepreload" crossorigin href="/Smart-Foxes-Bookshelf/assets/back_to_top-4d2101ad.js">
+  <link rel="stylesheet" href="/Smart-Foxes-Bookshelf/assets/shopping_list-bc69d269.css">
 </head>
 
 <body class="theme-light">
@@ -186,6 +186,84 @@
         </button>
       </div>
     </section>
+    <div class="card">
+    <div class="wrap-title">
+        <h2 class="title">Support Ukraine</h2>
+        <img class="main-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHlSURBVHgBrVbRccIwDBW9/jcbkA3IBk03oBM0G7QbABOUTgCdADpBYILQCcIGYQNXSp6J4jiE9PLudDaW9Cw5kg6iO2CMSVg+aCwwWc5S3Guc9OgjUyPqsY0JhhuWoMtIEcY3yITDkDLOfKROhHEH2c4aWMIC66fHOLyVMp8tNIclTCGtKCRqRTjtuEx8ty7hVemJokqn493gWxI+WOVkMjnzcmCJPW8pugu1MWf5gW+JB8fgG2vscb440YlNgCCoi/CENaR+RI6Pl/AygDB0fNqE6i2eqB9T+DQifPQYnqlOpxGNfCwmsBEFsKXOCIETqZSduoyc/fkmIcqlFFU6miR27KT+wk5CRgqnExwEb1gl1WfsbbmELLtG3aLSc1X1S6Wzg2Hva03er3EmpJluPePrV3VJbOoxtvFceIXu5bm6LTR1b2eKIFW9G5h6bM3t/koIh6VpQz/BAmeFqzfutFFOsbrZIlPRGZWJfs/mtLHgwj3wcsTPF5YVVaUjzl8sr9AdYduA7RR5j1Cd60G6pap0pDTWVJfTzPEp23VS5j0iJMKV53xG1fDcs/yyvONcUpboE6XrhyqZNX7nIthvoItoCPBVC5DnEHtRTkNh6s7IFGGKs4T+g75CH4N0SWPADPg79wcIXP3cyVjRhAAAAABJRU5ErkJggg==" alt="иконка" class="icon">
+    </div>
+    <div class="list">
+        <div class="additional-items" id="additionalItems1">
+            <div class="list-item">
+                <span>01</span>
+                <a href="https://www.savethechildren.net/#" target="_blank">
+                    <img class="number-icon" src="../img/icon1.svg" alt="Save the Children" class="icon">
+                </a>
+            </div>
+            <div class="list-item">
+                <span>02</span>
+                <a href="https://www.projecthope.org/" target="_blank">
+                    <img class="number-icon" src="../img/icon2.svg" alt="Project HOPE" class="icon">
+                </a>
+            </div>
+            <div class="list-item">
+                <span>03</span>
+                <a href="https://internationalmedicalcorps.org/" target="_blank">
+                    <img class="number-icon" src="../img/icon3.svg" alt="UNITED24" class="icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <span>04</span>
+            <a href="https://www.razomforukraine.org/ua/homeua/" target="_blank">
+                <img class="number-icon" src="../img/icon4.svg" alt="International Medical Corps" class="icon">
+            </a>
+        </div>
+        <div class="list-item">
+            <span>05</span>
+            <a href="https://www.actionagainsthunger.org/" target="_blank">
+                <img class="number-icon" src="../img/icon5.svg" alt="Medicins Sans Frontieres" class="icon">
+            </a>
+        </div>
+        <div class="list-item">
+            <span>06</span>
+            <a href="https://prytulafoundation.org/en" target="_blank">
+                <img class="number-icon" src="../img/icon6.svg" alt="RAZOM" class="icon">
+            </a>
+        </div>
+
+        <!-- Дополнительные пункты, изначально скрыты -->
+        <div class="additional-items" id="additionalItems">
+            <div class="list-item additional-item">
+                <span>07</span>
+                <a href="https://www.msf.org/" target="_blank">
+                    <img class="number-icon" src="../img/icon7.svg" alt="Action against hunger" class="icon">
+                </a>
+            </div>
+            <div class="list-item additional-item">
+                <span>08</span>
+                <a href="https://www.wvi.org/" target="_blank">
+                    <img class="number-icon" src="../img/icon8.svg" alt="World vision" class="icon">
+                </a>
+            </div>
+            <div class="list-item additional-item">
+                <span>09</span>
+                <a href="https://u24.gov.ua/uk" target="_blank">
+                    <img class="number-icon" src="../img/icon8-new.svg" alt="Serhiy Prytula Charity Foundation"
+                        class="icon">
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- Стрелочка для открытия/закрытия дополнительных пунктов -->
+        <div class="expand-btn" onclick="toggleExpand()"><img class="slider-btn-support"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJUSURBVHgBzZi/T9tAFMefaaW2qiqlS4dOztapDRMjDlOnli5dSVV1L3ulplL/gS4NCwMT2RD8ARBGpmRlchYQP4QSoUQICXi879knjPl554udj/Ry/nHnfP3Ofn73PLKAmQNpKmLTcVuKDfTFurFtirU8z+vQqBAxJbHfYiGbE4rVxHxySSyox9kJcS3KCu5QrM3uCdnWezJwjt146S5w7VkbUXkx91hRs5w/N8R5KVG+NG26evXzAiFmUsJKVx9ICwul8akYOiJsUu9M6A2OXmOfiqMiGup6R3ksnsINKlYYwJSWxXN97bGAihcF8Gz/xIb2WJHPVpqueKzsiSh8hNs0XlQxlQGNHxUImyZDwu2zkfRNEECYbzJia/2U5r8eUbMxfLBvc2Go+mKMIR+MhZXfPaU3b5/Inw7uFQdRzcZA9cUYQ0rEFuzvnPGPj4f8+f0eL/8f3Di/3Bioc+iDvjZYCbtPnAtRAOGiR5Yf7YPdc/r1vafamU8v1LH1tRM1fX8XX6vWkj6EZQquSXHAgSjQgbAV2TDLJG9ha+OUhscXNDXznF6+8igjq3hdNl0Im6o+I4e0EC5Gt+azpzW2H3Gd9izR+PAHP9pjCBfwWt65fpquWBW5v/IYMkZp/lHxLOkFSXoxgrysQsWgni29M5E6+YWivDtv8J/V5IFrwmI3zlP+fEuuKe+Eo5JRXtTIBI5KBaMuqtTIBo7KUCG7B6Utn7IiF6k7Eggv1cklHHmvxvalTtzcowO4VX7C0Vo0oGiF5ceWLA7DkBwgc0GxpEWGXAJYArgW7xOm8AAAAABJRU5ErkJggg==" alt=""></div>
+    </div>
+</div>
+
+<script src="/js/suport.js"></script>
   </main>
   <div class="pagination-container container ">
     <div class="pagination-arrows">
