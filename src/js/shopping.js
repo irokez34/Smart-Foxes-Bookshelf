@@ -1,3 +1,17 @@
+const suportEl = document.querySelector('.card');
+
+
+window.addEventListener('load', () => {
+  setInterval(() => {
+    const widthWindow = screen.width;
+    if (Number(widthWindow) >  Number(1439)) {
+      suportEl.classList.remove('is-hidden');
+      } else  {
+      suportEl.classList.add('is-hidden');
+    };
+  }, 1000);
+});
+
 const LOCAL_KEY = localStorage.getItem('shoppingList');
 const parsedSettings = JSON.parse(LOCAL_KEY);
 
@@ -25,7 +39,7 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
         </div>
         <button class="shopping-remove-btn" type="button">
           <svg class="remove-btn" width="16" height="16">
-            <use href="../img/sprite.svg#icon-trash"></use>
+            <use href="/img/sprite.svg#icon-trash"></use>
           </svg>
         </button>
       </div>`);
