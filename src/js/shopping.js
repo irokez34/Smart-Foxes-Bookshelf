@@ -41,7 +41,7 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
           <a class="img__src-books" href="${buy_links[1].url}"><img class="mdl-logo-book" src="${booksImg}" alt="logo book" width="33" height="32"></a>
         </div>
         <button class="shopping-remove-btn" type="button">
-          <svg class="remove-btn" width="16" height="16">
+          <svg class="remove-btn" width="16" height="16" viewBox="0 0 32 32">
             <use href="${iconTrash}#icon-trash"></use>
           </svg>
         </button>
