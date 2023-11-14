@@ -9,8 +9,8 @@ const elements = {
   showLoginFormButton: document.getElementById("showLoginFormButton"),
   registerButton: document.getElementById("registerButton"),
   loginButton: document.getElementById("loginButton"),
-  loginEmail: document.getElementById("login_email"), // Added this line
-  loginPassword: document.getElementById("login_password"), // Added this line
+  loginEmail: document.getElementById("login_email"),
+  loginPassword: document.getElementById("login_password"),
   userDropdown: document.querySelector(".select-menu"),
   signUpButton: document.querySelector(".header-link-log-up"),
   mobileActiveAcc: document.querySelector(".mobile-active-acc"),
@@ -18,6 +18,7 @@ const elements = {
   userNameElement: document.querySelector(".user-name"),
   googleSignInButton: document.getElementById("googleSignInButton"),
   logoutButton: document.getElementById("logoutButton"),
+  usernameDisplay: document.querySelector('.user-name'),
 };
 
 const firebaseConfig = {
@@ -44,17 +45,18 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  window.location.href = "./index.html";
+  window.location.href = "#";
 }
-
+function toggleFormVisibility(showForm, hideForm) {
+  elements[showForm].style.display = "flex";
+  elements[hideForm].style.display = "none";
+}
 function showRegistrationForm() {
-  elements.registrationForm.style.display = "flex";
-  elements.loginForm.style.display = "none";
+  toggleFormVisibility("registrationForm", "loginForm");
 }
 
 function showLoginForm() {
-  elements.registrationForm.style.display = "none";
-  elements.loginForm.style.display = "flex";
+    toggleFormVisibility("loginForm", "registrationForm");
 }
 
 function register() {
@@ -80,7 +82,7 @@ function register() {
       saveUserDataToLocalStorage(user_data);
       alert('Registration successful!');
       clearRegistrationForm();
-      window.location.href = "./index.html";
+      window.location.href = "#";
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
@@ -108,7 +110,7 @@ function login() {
       alert('Login successful!');
       displayUserInfo(user);
       clearLoginForm();
-      window.location.href = "./index.html";
+      window.location.href = "#";
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
@@ -184,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('user_data');
     auth.signOut()
       .then(() => {
-        window.location.href = "/";
+        window.location.href = "#";
       })
       .catch((error) => {
         console.error('Logout failed:', error);
@@ -192,4 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   elements.logoutButton.addEventListener('click', logout);
 });
+function updateUI(user) {
+  if (user) {
+    elements.usernameDisplay.textContent = user.displayName || user.email;
+
+    elements.userDropdown.classList.remove('is-hidden');
+    elements.signUpButton.style.display = 'none';
+    elements.mobileActiveAcc.classList.remove('is-hidden');
+  } else {
+    // localStorage.clear();
+    // window.location.href = "../index.html";
+  }
+}
 firebase.auth().onAuthStateChanged(updateUI);
