@@ -1,6 +1,6 @@
 import amazonImg from '/amazon.png';
 import booksImg from '/books.png';
-import iconTrash from '/icon-trash.svg'
+import iconTrash from '../img/sprite.svg';
 
 const suportEl = document.querySelector('.card');
 
@@ -42,7 +42,7 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
         </div>
         <button class="shopping-remove-btn" type="button">
           <svg class="remove-btn" width="16" height="16">
-            <use href="./img/sprite.svg#icon-trash"></use>
+            <use href="${iconTrash}#icon-trash"></use>
           </svg>
         </button>
       </div>`);
