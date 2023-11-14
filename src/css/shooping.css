@@ -149,13 +149,17 @@
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0.36px;
+  width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .shopping-book-discription {
   color: var(--best-sellers-text-title-color);
   padding-top: 8px;
-  width: 193px;
-    height: 68px;
+ width: 193px;
+ height: 65px;
     overflow: hidden;
     text-overflow: ellipsis;
   font-size: 14px;

@@ -55,8 +55,8 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
          shoppingTitleEl.insertAdjacentHTML('afterend', result.join(''));
     }   
 }
+createShopping(parsedSettings);
 
- createShopping(parsedSettings);
 
 
 
