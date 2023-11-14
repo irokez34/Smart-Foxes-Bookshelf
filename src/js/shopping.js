@@ -1,5 +1,6 @@
 import amazonImg from '/amazon.png';
 import booksImg from '/books.png';
+import iconTrash from '/icon-trash.svg'
 
 const suportEl = document.querySelector('.card');
 
@@ -35,13 +36,13 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
           <span class="shopping-book-category">${list_name}</span>
           <p class="shopping-book-discription">${description}</p>
           <span class="shopping-book-author">${author}</span>
-        </div>
+        
           <a class="img__src-amazon" href="${amazon_product_url}"><img class="mdl-logo-amazon" src="${amazonImg}" alt="logo amazon" width="62" height="19"></a>
           <a class="img__src-books" href="${buy_links[1].url}"><img class="mdl-logo-book" src="${booksImg}" alt="logo book" width="33" height="32"></a>
         </div>
         <button class="shopping-remove-btn" type="button">
           <svg class="remove-btn" width="16" height="16">
-            <use href="/img/sprite.svg#icon-trash"></use>
+            <use href="./img/sprite.svg#icon-trash"></use>
           </svg>
         </button>
       </div>`);
