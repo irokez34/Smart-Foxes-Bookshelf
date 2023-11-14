@@ -1,7 +1,7 @@
 import axios from 'axios';
 import amazonImg from '/amazon.png';
 import booksImg from '/books.png';
-import iconClose from '/icon-close.svg';
+import iconTrash from '../img/sprite.svg';
 
 
 // Функція для отримання деталей книги за її ID
@@ -32,8 +32,8 @@ function createModal(bookId) {
   const closeModalButton = document.createElement('button');
   closeModalButton.classList.add('mdl-btn-icon-x');
   closeModalButton.innerHTML = `
-        <svg class="mdl-icon-x" width="24" height="24">
-        <use href="${iconClose}"></use>
+        <svg class="mdl-icon-x" width="24" height="24" viewBox="0 0 32 32">
+        <use href="${iconTrash}#icon-close"></use>
     </svg>
     `;
 

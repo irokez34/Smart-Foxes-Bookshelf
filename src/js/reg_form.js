@@ -1,4 +1,25 @@
-// Конфігурація бази данних
+const elements = {
+  registrationForm: document.getElementById("registration_form"),
+  loginForm: document.getElementById("login_form"),
+  registrationName: document.getElementById("registration_name"),
+  registrationEmail: document.getElementById("registration_email"),
+  registrationPassword: document.getElementById("registration_password"),
+  closeModalButton: document.getElementById("closeModalButton"),
+  showRegistrationFormButton: document.getElementById("showRegistrationFormButton"),
+  showLoginFormButton: document.getElementById("showLoginFormButton"),
+  registerButton: document.getElementById("registerButton"),
+  loginButton: document.getElementById("loginButton"),
+  loginEmail: document.getElementById("login_email"), // Added this line
+  loginPassword: document.getElementById("login_password"), // Added this line
+  userDropdown: document.querySelector(".select-menu"),
+  signUpButton: document.querySelector(".header-link-log-up"),
+  mobileActiveAcc: document.querySelector(".mobile-active-acc"),
+  userInfoContainer: document.getElementById("user_info"),
+  userNameElement: document.querySelector(".user-name"),
+  googleSignInButton: document.getElementById("googleSignInButton"),
+  logoutButton: document.getElementById("logoutButton"),
+};
+
 const firebaseConfig = {
   apiKey: "AIzaSyAQpcHlYnmJgrkoX3KbdR3qCIHswCf3vaM",
   authDomain: "bookshelf-smartfoxes-team.firebaseapp.com",
@@ -12,40 +33,34 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
-// Function to save user data to local storage
 function saveUserDataToLocalStorage(userData) {
-  localStorage.setItem('user_data', JSON.stringify(userData));
+  localStorage.setItem("user_data", JSON.stringify(userData));
 }
 
-// Function to retrieve user data from local storage
 function getUserDataFromLocalStorage() {
-  const userDataString = localStorage.getItem('user_data');
+  const userDataString = localStorage.getItem("user_data");
   return userDataString ? JSON.parse(userDataString) : null;
 }
 
-// Функція для закриття модального вікна
 function closeModal() {
-  document.getElementById('myModal').style.display = 'none';
-  document.location.href = "./index.html";
+  elements.registrationForm.style.display = 'none';
+  window.location.href = "./index.html";
 }
 
-// Функція для показу форми реєстрації
 function showRegistrationForm() {
-  document.getElementById("registration_form").style.display = "flex";
-  document.getElementById("login_form").style.display = "none";
+  elements.registrationForm.style.display = "flex";
+  elements.loginForm.style.display = "none";
 }
 
-// Функція для показу форми входу
 function showLoginForm() {
-  document.getElementById("registration_form").style.display = "none";
-  document.getElementById("login_form").style.display = "flex";
+  elements.registrationForm.style.display = "none";
+  elements.loginForm.style.display = "flex";
 }
 
-// Функція для реєстрації
 function register() {
-  let name = document.getElementById('registration_name').value;
-  let email = document.getElementById('registration_email').value;
-  let password = document.getElementById('registration_password').value;
+  let name = elements.registrationName.value;
+  let email = elements.registrationEmail.value;
+  let password = elements.registrationPassword.value;
 
   if (!validate_field(name) || !validate_email(email) || !validate_password(password)) {
     alert('Registration failed. Please check your inputs.');
@@ -53,8 +68,8 @@ function register() {
   }
 
   auth.createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      let user = auth.currentUser;
+    .then((userCredential) => {
+      let user = userCredential.user;
       let database_ref = database.ref();
       let user_data = {
         name: name,
@@ -65,17 +80,16 @@ function register() {
       saveUserDataToLocalStorage(user_data);
       alert('Registration successful!');
       clearRegistrationForm();
-      document.location.href = "./index.html";
+      window.location.href = "./index.html";
     })
     .catch((error) => {
       alert(`Registration failed: ${error.message}`);
     });
 }
 
-// Функція для входу
 function login() {
-  let email = document.getElementById('login_email').value;
-  let password = document.getElementById('login_password').value;
+  let email = elements.loginEmail.value;
+  let password = elements.loginPassword.value;
 
   if (!validate_email(email) || !validate_password(password)) {
     alert('Login failed. Please check your inputs.');
@@ -83,8 +97,8 @@ function login() {
   }
 
   auth.signInWithEmailAndPassword(email, password)
-    .then(() => {
-      let user = auth.currentUser;
+    .then((userCredential) => {
+      let user = userCredential.user;
       let database_ref = database.ref();
       let user_data = {
         last_login: Date.now()
@@ -94,14 +108,13 @@ function login() {
       alert('Login successful!');
       displayUserInfo(user);
       clearLoginForm();
-      document.location.href = "./index.html";
+      window.location.href = "./index.html";
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
     });
 }
 
-// Функції валідації
 function validate_email(email) {
   let expression = /^[^@]+@\w+(\.\w+)+\w$/;
   return expression.test(email);
@@ -115,55 +128,45 @@ function validate_field(field) {
   return field.trim() !== '';
 }
 
-// Функція для очищення полів форми реєстрації
 function clearRegistrationForm() {
-  document.getElementById('registration_name').value = '';
-  document.getElementById('registration_email').value = '';
-  document.getElementById('registration_password').value = '';
+  elements.registrationName.value = '';
+  elements.registrationEmail.value = '';
+  elements.registrationPassword.value = '';
 }
 
-// Функція для очищення полів форми входу
 function clearLoginForm() {
-  document.getElementById('login_email').value = '';
-  document.getElementById('login_password').value = '';
+  elements.loginEmail.value = '';
+  elements.loginPassword.value = '';
 }
 
-// Функція для виведення імені користувача
 function displayUserInfo(user) {
-  const userInfoContainer = document.getElementById('user_info');
-  const userNameElement = document.querySelector('.user-name');
-
-  if (userInfoContainer && userNameElement) {
-    userInfoContainer.textContent = `Welcome, ${user.displayName || user.email}!`;
-    userNameElement.textContent = user.displayName || user.email;
+  if (elements.userInfoContainer && elements.userNameElement) {
+    elements.userInfoContainer.textContent = `Welcome, ${user.displayName || user.email}!`;
+    elements.userNameElement.textContent = user.displayName || user.email;
   } else {
     console.error("Element with id 'user_info' or class 'user-name' not found.");
   }
 }
 
-// Додавання слухача подій до елементів
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('closeModalButton').addEventListener('click', closeModal);
-  document.getElementById('showRegistrationFormButton').addEventListener('click', showRegistrationForm);
-  document.getElementById('showLoginFormButton').addEventListener('click', showLoginForm);
-  document.getElementById('registerButton').addEventListener('click', register);
-  document.getElementById('loginButton').addEventListener('click', login);
+  elements.closeModalButton.addEventListener('click', closeModal);
+  elements.showRegistrationFormButton.addEventListener('click', showRegistrationForm);
+  elements.showLoginFormButton.addEventListener('click', showLoginForm);
+  elements.registerButton.addEventListener('click', register);
+  elements.loginButton.addEventListener('click', login);
 
-  // keydown для реєстрації по клавіші Enter
-  document.getElementById('registration_form').addEventListener('keydown', (event) => {
+  elements.registrationForm.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       register();
     }
   });
 
-  // keydown для входу по клавіші Enter
-  document.getElementById('login_form').addEventListener('keydown', (event) => {
+  elements.loginForm.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       login();
     }
   });
 
-  // Логін з гугла
   function loginWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -172,22 +175,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const user = result.user;
       })
       .catch((error) => {
-        console.error('Помилка входу через Google:', error);
+        console.error('Google login error:', error);
       });
   }
-  document.getElementById('googleSignInButton').addEventListener('click', loginWithGoogle);
-  
+  elements.googleSignInButton.addEventListener('click', loginWithGoogle);
 
-  // Функція логаут
   function logout() {
     localStorage.removeItem('user_data');
     auth.signOut()
       .then(() => {
-        document.location.href = "/";
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error('Logout failed:', error);
       });
   }
-  document.getElementById('logoutButton').addEventListener('click', logout);
+  elements.logoutButton.addEventListener('click', logout);
 });
+firebase.auth().onAuthStateChanged(updateUI);
