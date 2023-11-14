@@ -1,6 +1,8 @@
 .card {
-  max-width: 335px;
-  height: 460px;
+
+  width: 332px;
+  height: 484px;
+
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
   border-radius: 16px;
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
@@ -9,17 +11,32 @@
 
 .title {
   color: #FFF;
-  font-size: 22px;
-  line-height: 24px;
-  letter-spacing: -0.88px;
-  margin-right: 11px;
+
+font-family: DM Sans;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px; /* 116.667% */
+letter-spacing: -0.96px;
+
+
+ 
+
 }
 
 .wrap-title {
   display: flex;
-  align-items: center;
-  justify-content: start;
-  margin-bottom: 40px;
+
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.main-icon{
+  max-width: 32px;
+}
+.slider-btn-support{
+max-width: 32px;
+margin: 0 auto;
+
 
 }
 
@@ -52,7 +69,9 @@
 .list-item {
   display: flex;
   align-items: center;
-  justify-content: start;
+
+  margin-bottom: 20px;
+
 }
 
 

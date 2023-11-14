@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function toggleExpand() {
   var expandBtn = document.querySelector('.expand-btn');
   var additionalItems = document.getElementById('additionalItems');
+  var additionalItems1 = document.getElementById('additionalItems1');
 
   expandBtn.classList.toggle(
     'expanded',
@@ -13,4 +14,6 @@ function toggleExpand() {
 
   additionalItems.style.display =
     additionalItems.style.display == 'none' ? 'flex' : 'none';
+  additionalItems1.style.display =
+    additionalItems1.style.display == 'none' ? 'flex' : 'none';
 }
