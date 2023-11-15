@@ -1,4 +1,5 @@
 import { all } from 'axios';
+import Notiflix from 'notiflix';
 import { getTopBooks, getBooksByCategory } from './BOOKS_API';
 import { createModal } from './pop_up';
 
@@ -20,7 +21,7 @@ async function onLoad() {
     const categories = createCategories(topBooks.data);
     addCategoriesMarkup(categories);
   } catch (err) {
-    console.log(err);
+    Notiflix.Report.failure('OOPS! We have some problems🙊', err, 'Try again');
   }
 }
 
@@ -31,7 +32,7 @@ async function loadBack() {
     const categories = createCategories(topBooks.data);
     categoriesBook.innerHTML = categories;
   } catch (err) {
-    console.log(err);
+    Notiflix.Report.failure('OOPS! We have some problems🙊', err, 'Try again');
   }
 }
 
@@ -105,7 +106,7 @@ async function onSeeMore(event) {
 
     addCardByGenre(allBooksByGenre);
   } catch (err) {
-    console.log(err);
+    Notiflix.Report.failure('OOPS! We have some problems🙊', err, 'Try again');
   }
 }
 
