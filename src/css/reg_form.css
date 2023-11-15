@@ -142,14 +142,13 @@ input[type='email']::-webkit-input-placeholder {
 }
 
 .register-toggle {
-  color: #4f2ee8;
+  color: rgba(17, 17, 17, 0.5);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.14px;
-  text-decoration-line: underline;
   text-transform: uppercase;
   background-color: inherit;
   border: none;
@@ -265,4 +264,8 @@ input[type='email']::-webkit-input-placeholder {
   border: none;
   border-radius: 40px;
   cursor: pointer;
+}
+.clicked {
+  color: #4f2ee8;
+  text-decoration-line: underline;
 }
