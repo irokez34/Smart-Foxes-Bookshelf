@@ -54,7 +54,7 @@ function createCategories(arr = []) {
         <ul class="categories-books-genre-all-books">
         ${createCard(books)}
         </ul>
-        <button class="categories-books-btn">see more</button>
+        <button class="categories-books-btn" data-category='${list_name}'>see more</button>
       </div>
       `;
     })
@@ -96,7 +96,7 @@ async function onSeeMore(event) {
   )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
   categoriesBooksTitle.insertAdjacentHTML(
     'afterend',
-    '<button class="categories-books-back-btn">back to Best Sellers</button>'
+    '<button class="categories-books-back-btn ">back to Best Sellers</button>'
   );
   try {
     const booksByGenre = await getBooksByCategory(seeMoreGenre);
