@@ -7,6 +7,7 @@ const elem = {
   allCategoriesListItem: document.querySelector('.categories-list-item'),
   categoriesBook: document.querySelector('.categories-books-all'),
   categoriesBooksTitle: document.querySelector('.categories-books-title'),
+  divForSeeMoreBtn: document.querySelector('.categories-books')
 };
 const firstListItem = document.querySelector(
   '.js-categories-list li:first-of-type'
@@ -14,6 +15,7 @@ const firstListItem = document.querySelector(
 
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
+elem.divForSeeMoreBtn.addEventListener('click', onBtnMoreClick)
 
 // Функція створення розмітки
 
@@ -44,7 +46,7 @@ function clickAccent(evt) {
 
   if (isFirstElement) {
     !evt.preventDefault();
-  };
+  }
 
   const isClickOnLiEl = evt.target.tagName === 'LI';
 
@@ -79,3 +81,21 @@ async function onCategoryClick(evt) {
   )} <span class="categories-books-title-accent">${lastWord.toString()}</span>`;
 }
 
+
+// Акцент на категорії при кліку на SeeMore
+
+function onBtnMoreClick(evt) {
+  if (!evt.target.classList.contains('categories-books-btn')) {
+    return;
+  }
+  const categoryName = evt.target.dataset.category;
+
+  const arrClass = [...elem.allCategoriesList.children];
+  arrClass.forEach(item => {
+    const categ = item.dataset.category;
+    item.classList.remove('category-active');
+    if (categ === categoryName) {
+      item.classList.add('category-active');
+    }
+  });
+}
