@@ -36,7 +36,7 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 function redirectToIndex() {
-  location.href = '../index.html';
+  location.href = 'index.html';
 }
 function toggleFormVisibility(showForm, hideForm, clickedButton) {
   elements[showForm].style.display = 'flex';
