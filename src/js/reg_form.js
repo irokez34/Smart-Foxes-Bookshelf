@@ -21,8 +21,8 @@ const elements = {
   googleSignInButton: document.getElementById('googleSignInButton'),
   logoutButton: document.getElementById('logoutButton'),
   usernameDisplay: document.querySelector('.user-name'),
+  toggleButtons: document.querySelectorAll('.toggle_buttons button'),
 };
-
 const firebaseConfig = {
   apiKey: 'AIzaSyAQpcHlYnmJgrkoX3KbdR3qCIHswCf3vaM',
   authDomain: 'bookshelf-smartfoxes-team.firebaseapp.com',
@@ -35,6 +35,27 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
+function toggleFormVisibility(showForm, hideForm, clickedButton) {
+  elements[showForm].style.display = 'flex';
+  elements[hideForm].style.display = 'none';
+
+  elements.toggleButtons.forEach(button => {
+    button.classList.remove('clicked');
+  });
+
+  elements[clickedButton].classList.add('clicked');
+}
+function showRegistrationForm() {
+  toggleFormVisibility(
+    'registrationForm',
+    'loginForm',
+    'showRegistrationFormButton'
+  );
+}
+
+function showLoginForm() {
+  toggleFormVisibility('loginForm', 'registrationForm', 'showLoginFormButton');
+}
 
 function saveUserDataToLocalStorage(userData) {
   localStorage.setItem('user_data', JSON.stringify(userData));
@@ -47,18 +68,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  location.href = 'index.html';
-}
-function toggleFormVisibility(showForm, hideForm) {
-  elements[showForm].style.display = 'flex';
-  elements[hideForm].style.display = 'none';
-}
-function showRegistrationForm() {
-  toggleFormVisibility('registrationForm', 'loginForm');
-}
-
-function showLoginForm() {
-  toggleFormVisibility('loginForm', 'registrationForm');
+  window.location.replace('../index.html');
 }
 
 function register() {
@@ -91,7 +101,7 @@ function register() {
       console.log('Name:', name);
       console.log('Email:', email);
       clearRegistrationForm();
-      location.href = 'index.html';
+      window.location.replace('../index.html');
     })
     .catch(error => {
       alert(`Registration failed: ${error.message}`);
@@ -121,7 +131,7 @@ function login() {
       console.log('Email:', email);
       displayUserInfo(user);
       clearLoginForm();
-      location.href = 'index.html';
+      window.location.replace('../index.html');
     })
     .catch(error => {
       alert(`Login failed: ${error.message}`);
@@ -166,7 +176,6 @@ function displayUserInfo(user) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  elements.closeModalButton.addEventListener('click', closeModal);
   elements.showRegistrationFormButton.addEventListener(
     'click',
     showRegistrationForm
@@ -206,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     auth
       .signOut()
       .then(() => {
-        location.href = 'index.html';
+        window.location.replace('../index.html');
       })
       .catch(error => {
         console.error('Logout failed:', error);
@@ -214,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   elements.logoutButton.addEventListener('click', logout);
 });
+
 function updateUI(user) {
   if (user) {
     elements.usernameDisplay.textContent = user.displayName || user.email;
@@ -223,7 +233,7 @@ function updateUI(user) {
     elements.mobileActiveAcc.classList.remove('is-hidden');
   } else {
     // localStorage.clear();
-    // window.location.href = "../index.html";
   }
 }
+
 firebase.auth().onAuthStateChanged(updateUI);
