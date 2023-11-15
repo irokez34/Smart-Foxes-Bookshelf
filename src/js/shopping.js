@@ -56,6 +56,28 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
          shoppingTitleEl.insertAdjacentHTML('afterend', result.join(''));
     }   
 }
+const shoppingListContainer = document.querySelector('.shopping-title');
+
+shoppingListContainer.addEventListener('click', (event) => {
+  const removeButton = event.target.closest('.shopping-remove-btn');
+
+  if (removeButton) {
+    const shoppingBox = removeButton.closest('.shopping-box');
+
+    if (shoppingBox) {
+      const itemId = shoppingBox.dataset.itemId;
+
+      removeBookFromShoppingList(itemId);
+
+      shoppingBox.remove();
+    }
+  }
+});
+
+function removeBookFromShoppingList(itemId) {
+  const updatedShoppingList = parsedSettings.filter(item => item.id !== itemId);
+  localStorage.setItem('shoppingList', JSON.stringify(updatedShoppingList));
+}
 createShopping(parsedSettings);
 
 
