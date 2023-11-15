@@ -45,6 +45,7 @@ function toggleFormVisibility(showForm, hideForm, clickedButton) {
 
   elements[clickedButton].classList.add('clicked');
 }
+
 function showRegistrationForm() {
   toggleFormVisibility(
     'registrationForm',
@@ -68,7 +69,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  window.location.replace('../index.html');
+  window.location.href = '/';
 }
 
 function register() {
@@ -101,7 +102,7 @@ function register() {
       console.log('Name:', name);
       console.log('Email:', email);
       clearRegistrationForm();
-      window.location.replace('../index.html');
+      window.location.href = '/';
     })
     .catch(error => {
       alert(`Registration failed: ${error.message}`);
@@ -131,7 +132,7 @@ function login() {
       console.log('Email:', email);
       displayUserInfo(user);
       clearLoginForm();
-      window.location.replace('../index.html');
+      window.location.href = '/';
     })
     .catch(error => {
       alert(`Login failed: ${error.message}`);
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   elements.showLoginFormButton.addEventListener('click', showLoginForm);
   elements.registerButton.addEventListener('click', register);
   elements.loginButton.addEventListener('click', login);
-
+  elements.closeModalButton.addEventListener('click', closeModal);
   elements.registrationForm.addEventListener('keydown', event => {
     if (event.key === 'Enter') {
       register();
@@ -215,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     auth
       .signOut()
       .then(() => {
-        window.location.replace('../index.html');
+        window.location.href = '#';
       })
       .catch(error => {
         console.error('Logout failed:', error);
@@ -233,6 +234,7 @@ function updateUI(user) {
     elements.mobileActiveAcc.classList.remove('is-hidden');
   } else {
     // localStorage.clear();
+    // window.location.href = "../index.html";
   }
 }
 
