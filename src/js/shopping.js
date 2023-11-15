@@ -21,7 +21,7 @@ const parsedSettings = JSON.parse(LOCAL_KEY);
 const shoppingDefaultEl = document.querySelector('.shopping-default');
 const shoppingTitleEl = document.querySelector('.shopping-title');
 
- function createShopping(arr) {
+ export function createShopping(arr) {
      let result = [];
     arr.map(({description, amazon_product_url, author, book_image, list_name, title, buy_links
     }) => {
@@ -51,6 +51,7 @@ const shoppingTitleEl = document.querySelector('.shopping-title');
      if (control) {
          shoppingDefaultEl.classList.remove('is-hidden');
      } else {
+     
          shoppingDefaultEl.classList.add('is-hidden');
          shoppingTitleEl.insertAdjacentHTML('afterend', result.join(''));
     }   
