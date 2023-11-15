@@ -82,7 +82,7 @@ async function onCategoryClick(evt) {
 }
 
 
-// 
+// Акцент на категорії при кліку на SeeMore
 
 function onBtnMoreClick(evt) {
   if (!evt.target.classList.contains('categories-books-btn')) {
