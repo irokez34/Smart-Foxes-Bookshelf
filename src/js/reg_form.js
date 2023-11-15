@@ -35,6 +35,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
+function redirectToIndex() {
+  location.href = '../index.html';
+}
 function toggleFormVisibility(showForm, hideForm, clickedButton) {
   elements[showForm].style.display = 'flex';
   elements[hideForm].style.display = 'none';
@@ -69,7 +72,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  window.location.href = '/';
+  redirectToIndex();
 }
 
 function register() {
@@ -102,7 +105,7 @@ function register() {
       console.log('Name:', name);
       console.log('Email:', email);
       clearRegistrationForm();
-      window.location.href = '/';
+      redirectToIndex();
     })
     .catch(error => {
       alert(`Registration failed: ${error.message}`);
@@ -132,7 +135,7 @@ function login() {
       console.log('Email:', email);
       displayUserInfo(user);
       clearLoginForm();
-      window.location.href = '/';
+      redirectToIndex();
     })
     .catch(error => {
       alert(`Login failed: ${error.message}`);
@@ -216,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     auth
       .signOut()
       .then(() => {
-        window.location.href = '#';
+        redirectToIndex();
       })
       .catch(error => {
         console.error('Logout failed:', error);
