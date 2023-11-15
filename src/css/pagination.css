@@ -21,12 +21,12 @@
     background-color: var(--fill-arrow-left-bg);
     transition: background-color 0.7s ease; 
 }
-.pagination-btn-left:hover
+/* .pagination-btn-left:hover
 {
    
     background-color: var(--fill-arrow-right-bg);
     border: 1px solid var(--fill-arrow-right-border);
-}
+} */
 .pagination-btn-right
 
 {

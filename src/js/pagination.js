@@ -1,87 +1,121 @@
+import { createShopping } from './shopping';
 
 const storedData = localStorage.getItem('shoppingList');
 const shoppingList = JSON.parse(storedData);
-const pagination = document.querySelector('.pagination-container');
-const paginationPages = document.querySelector('.pagination-pages')
-
-
-const itemsPerPage = 3; 
+const paginationPages = document.querySelector('.pagination-pages');
+const shoppingContainer = document.querySelector('.shopping-container');
+let itemsPerPage = 3; 
 let currentPage = 1;
 
+function chunkArray(array, chunkSize) {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+}
 
-function checkShoppingList ()
-{
+const chunkedArray = chunkArray(shoppingList, itemsPerPage);
+const totalPages = Math.ceil(shoppingList.length / itemsPerPage);
+
+function createBtnMarkup (pageNumber) {
+    const markup = `<button class="pagination-pages-btn"  data-page="${pageNumber}">
+        <span class="pagination-pages-numbers">${pageNumber}</span></button>`;
+
+    paginationPages.insertAdjacentHTML('beforeend', markup);
+
+    const button = document.querySelector(`[data-page="${pageNumber}"]`);
+    button.addEventListener('click', function () {
+        currentPage = pageNumber;
+        displayItems();
+        updateActivePageButton();
+    });
+}
+
+function updateActivePageButton() {
+    const buttons = document.querySelectorAll('.pagination-pages-btn');
+    buttons.forEach(button => {
+        const page = parseInt(button.dataset.page);
+        if (page === currentPage) {
+            button.classList.add('pagination-pages-btn-active');
+        } else {
+            button.classList.remove('pagination-pages-btn-active');
+        }
+    });
+}
+
+function displayItems() {
+    const currentPageItems = chunkedArray[currentPage - 1];
+    console.log(currentPageItems);
+    createShopping(currentPageItems);
+}
+
+function createBtnPages() {
+    if (shoppingList.length > itemsPerPage) {
+        for (let i = 1; i <= totalPages; i++) {
+            createBtnMarkup(i);
+        }
+    }
+}
+
+function checkShoppingList() {
+    const pagination = document.querySelector('.pagination-container');
     if (shoppingList.length === 0) {
         pagination.classList.add('is-hidden');
     }
 }
+
+
+
+
+
 checkShoppingList();
-
-
-// function updatePaginationButtons() {
-
-//     paginationPages.innerHTML = '';
-//     const totalPages = Math.ceil(shoppingList.length / itemsPerPage);
-
-//     for (let i = 1; i <= totalPages; i++) {
-//       const markup = `<button class="pagination-pages-btn"><span class="pagination-pages-numbers">${i}</span></button>`
-//       paginationPages.insertAdjacentHTML('afterbegin',markup)
-//       button.addEventListener('click', function() {
-//         currentPage = i;
-//         createShopping  ();
-//         updatePaginationButtons();
-//       });
-
-//       paginationPages.appendChild(button);
-//     }
-// }
-
-// function goToPrevPage() {
-//   if (currentPage > 1) {
-//     currentPage--;
-//     displayItems();
-//   }
-// }
-
-// function goToNextPage() {
-//   const maxPage = Math.ceil(shoppingList.length / itemsPerPage);
-//   if (currentPage < maxPage) {
-//     currentPage++;
-//     displayItems();
-//   }
-// }
-
-
-// document.querySelector('.pagination-btn-left').addEventListener('click', goToPrevPage);
-// document.querySelector('.pagination-btn-right').addEventListener('click', goToNextPage);
-
-// updatePaginationButtons()
+createBtnPages();
+updateActivePageButton();
 
 
 
 
-// function displayPagination() {
-//    if (shoppingList.length === 0) {
-//     pagination.classList.add('is-hidden')
-//    }
-//     paginationPages.innerHTML = ''; 
 
-    // const totalPages = Math.ceil(shoppingList.length / itemsPerPage);
 
-//     for (let i = 1; i <= totalPages; i++) {
-//         const pageItem = document.createElement('button');
-//         pageItem.className = 'pagination-pages-btn';
-//         pageItem.textContent = i;
-//         pageItem.addEventListener('click', () => {
-//             createShopping(i);
-//         });
-//         paginationPages.appendChild(pageItem);
-//     }
-// }
 
-// displayPagination()
 
-// function createBtn ()
-// {
-//     return
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
