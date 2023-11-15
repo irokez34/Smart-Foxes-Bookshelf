@@ -47,7 +47,7 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  location.href = 'Smart-Foxes-Bookshelf/shopping_list.html';
+  location.href = 'index.html';
 }
 function toggleFormVisibility(showForm, hideForm) {
   elements[showForm].style.display = 'flex';
@@ -91,7 +91,7 @@ function register() {
       console.log('Name:', name);
       console.log('Email:', email);
       clearRegistrationForm();
-      location.href = 'Smart-Foxes-Bookshelf/shopping_list.html';
+      location.href = 'index.html';
     })
     .catch(error => {
       alert(`Registration failed: ${error.message}`);
@@ -121,7 +121,7 @@ function login() {
       console.log('Email:', email);
       displayUserInfo(user);
       clearLoginForm();
-      window.location.href = '/';
+      location.href = 'index.html';
     })
     .catch(error => {
       alert(`Login failed: ${error.message}`);
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     auth
       .signOut()
       .then(() => {
-        window.location.href = '#';
+        location.href = 'index.html';
       })
       .catch(error => {
         console.error('Logout failed:', error);
