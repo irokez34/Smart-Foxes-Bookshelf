@@ -21,42 +21,20 @@ const elements = {
   googleSignInButton: document.getElementById('googleSignInButton'),
   logoutButton: document.getElementById('logoutButton'),
   usernameDisplay: document.querySelector('.user-name'),
-  toggleButtons: document.querySelectorAll('.toggle_buttons button'),
 };
+
 const firebaseConfig = {
-  apiKey: 'your-api-key',
-  authDomain: 'your-auth-domain',
-  projectId: 'your-project-id',
-  storageBucket: 'your-storage-bucket',
-  messagingSenderId: 'your-messaging-sender-id',
-  appId: 'your-app-id',
-  measurementId: 'your-measurement-id',
+  apiKey: 'AIzaSyAQpcHlYnmJgrkoX3KbdR3qCIHswCf3vaM',
+  authDomain: 'bookshelf-smartfoxes-team.firebaseapp.com',
+  projectId: 'bookshelf-smartfoxes-team',
+  storageBucket: 'bookshelf-smartfoxes-team.appspot.com',
+  messagingSenderId: '615845871184',
+  appId: '1:615845871184:web:f8e6e3da332e48b2721b55',
+  measurementId: 'G-J4EFJFQ0WD',
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
-function toggleFormVisibility(showForm, hideForm, clickedButton) {
-  elements[showForm].style.display = 'flex';
-  elements[hideForm].style.display = 'none';
-
-  elements.toggleButtons.forEach(button => {
-    button.classList.remove('clicked');
-  });
-
-  elements[clickedButton].classList.add('clicked');
-}
-
-function showRegistrationForm() {
-  toggleFormVisibility(
-    'registrationForm',
-    'loginForm',
-    'showRegistrationFormButton'
-  );
-}
-
-function showLoginForm() {
-  toggleFormVisibility('loginForm', 'registrationForm', 'showLoginFormButton');
-}
 
 function saveUserDataToLocalStorage(userData) {
   localStorage.setItem('user_data', JSON.stringify(userData));
@@ -69,7 +47,18 @@ function getUserDataFromLocalStorage() {
 
 function closeModal() {
   elements.registrationForm.style.display = 'none';
-  window.location.href = '/';
+  location.href = 'shopping_list.html';
+}
+function toggleFormVisibility(showForm, hideForm) {
+  elements[showForm].style.display = 'flex';
+  elements[hideForm].style.display = 'none';
+}
+function showRegistrationForm() {
+  toggleFormVisibility('registrationForm', 'loginForm');
+}
+
+function showLoginForm() {
+  toggleFormVisibility('loginForm', 'registrationForm');
 }
 
 function register() {
@@ -177,6 +166,7 @@ function displayUserInfo(user) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  elements.closeModalButton.addEventListener('click', closeModal);
   elements.showRegistrationFormButton.addEventListener(
     'click',
     showRegistrationForm
@@ -224,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   elements.logoutButton.addEventListener('click', logout);
 });
-
 function updateUI(user) {
   if (user) {
     elements.usernameDisplay.textContent = user.displayName || user.email;
@@ -237,5 +226,4 @@ function updateUI(user) {
     // window.location.href = "../index.html";
   }
 }
-
 firebase.auth().onAuthStateChanged(updateUI);
