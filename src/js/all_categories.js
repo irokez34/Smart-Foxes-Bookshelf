@@ -7,15 +7,15 @@ const elem = {
   allCategoriesListItem: document.querySelector('.categories-list-item'),
   categoriesBook: document.querySelector('.categories-books-all'),
   categoriesBooksTitle: document.querySelector('.categories-books-title'),
+  divForSeeMoreBtn: document.querySelector('.categories-books')
 };
 const firstListItem = document.querySelector(
   '.js-categories-list li:first-of-type'
 );
-const seeMoreBtn = document.querySelector('.categories-books');
 
 elem.allCategoriesContainer.addEventListener('click', onCategoryClick);
 elem.allCategoriesContainer.addEventListener('click', clickAccent);
-seeMoreBtn.addEventListener('click', onBtnMoreClick)
+elem.divForSeeMoreBtn.addEventListener('click', onBtnMoreClick)
 
 // Функція створення розмітки
 
