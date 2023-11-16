@@ -24,6 +24,7 @@ const shoppingBox = document.querySelector('.shopping-box');
 const shoppingBoxContainer = document.querySelector('.shopping-box-container');
  export function createShopping(arr) {
      let result = [];
+     shoppingBoxContainer.innerHTML = ''
     arr.map(({description, amazon_product_url, author, book_image, list_name, title, buy_links
     }) => {
         
